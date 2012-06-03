@@ -1,0 +1,33 @@
+Variante 1
+
+labordurchführung
+    wir haben die geräte x und xyyx
+    wir stecken das so zusammen
+    mit dem Signal passiert also folgendes
+
+Auswertung
+    wir sehen, dass da so sachen sind
+    die sachen sind wie erwartet,  da nach so theorien/flatung das rauskommen müsste wenn man sowas macht wie wirs gemacht haben
+    die abweichungen von der Theorie sind wie folgt zu erklären
+
+
+Variante 2
+
+    Theorie
+        wenn man so sachen so macht (wie wirs vor haben) dann müsste wegen dem und diesem sowas hier rauskommen
+
+    labordurchführung
+        wir haben die geräte x und xyyx
+        wir stecken das so zusammen
+        mit dem Signal passiert also folgendes
+
+    Auswertung
+        wir sehen, dass da so sachen sind
+        die sachen sind wie erwartet (s.o.)
+        die abweichungen von der Theorie sind wie folgt zu erklären
+
+
+
+
+
+
