@@ -30,10 +30,38 @@
         \subsubsection{Shape-Top-Abtastung}
         \begin{quote}
             
+            
+            \begin{equation*}
+                \begin{split}
+                    f_m (t)   &= f(t) \cdot \sqcap_{\alpha T} (t) \ast \delta_T (t) \\
+                    F_m (j\omega) &= \frac{1}{2\pi} F (j\omega) \ast \left [ \alpha T \cdot si \left( \frac{\omega
+                    \alpha T}{2} \right) \cdot \omega_T \cdot \delta_{\omega T} (\omega) \right] \\
+                    &= \alpha \cdot F (j \omega) \ast \left ( si \left( \frac{\omega \alpha T}{2} \right)
+                    \sum_{k=-\infty}^{\infty} \delta (\omega - k\omega_T) \right)\\
+                    &= \alpha \cdot F (j \omega) \ast \sum_{k=-\infty}^{\infty} (si(k \pi \alpha) \cdot \delta (\omega -
+                    k\omega_T))\\
+                    &= \alpha \cdot \sum_{k=-\infty}^{\infty} \left [ si(k \pi \alpha) \cdot F (j(\omega - k\omega_T))
+                    \right]\\
+                \end{split}
+            \end{equation*}
+            
+            
         \end{quote}
         
         \subsubsection{Flat-Top-Abtastung}
         \begin{quote}
+            
+            
+            \begin{equation*}
+                \begin{split}
+                    f_m (t) &= [f (t) \cdot \delta_T (t)] \ast \sqcap_{\alpha T} (t)\\
+                    F_m (j\omega) &= \left ( \frac{1}{2 \pi} F (j\omega) \ast \omega_T \cdot \delta_T (\omega) \right) \cdot
+                    \alpha T \cdot si (\frac{\alpha \omega T}{2})\\
+                    &= \alpha \cdot si \left( \frac{\omega \alpha T}{2} \right) \cdot \sum_{k=-\infty}^{\infty} F(j(\omega -
+                    k\omega_T))\\
+                \end{split}
+            \end{equation*}
+            
             
         \end{quote}
         
