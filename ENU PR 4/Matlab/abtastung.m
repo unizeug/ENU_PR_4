@@ -30,7 +30,12 @@ n_u_vis = 2*N*1 / f_sin;
 Nc = 2;
 Na = 3;
 i = 1;
+
+%global SI_ZP;
+SI_ZP = zeros(1,N);
+        
 for f_c = [10000 20000] % in kHz
+    SI_ZP = zeros(1,N);
     for alpha_c = [0.2 0.5 0.7]
         
         % unipolares Rechtecksignal mit 0..3 V Spannung als Abtastsignal mit f_c als Frequenz
@@ -40,11 +45,11 @@ for f_c = [10000 20000] % in kHz
         u_sin_pam = u_sin.*c;         % Zeitsignal nach Abtastung mit Signalausblendung
         U_sin_pam = abs(fft(u_sin_pam)/N);  % Betragsfrequenzgang nach Abtastung mit Signalausblendung
         
-        ST_ZP = zeros(1,N);
-        ST_ZP(1:N/f_c) = c(1:N/f_c);
-        ST_ZP = ST_ZP .* max(u_sin) .*(f_c*T_ges);
-        ST_ZP_fft = abs(fft(ST_ZP)./N);  % Betragsfrequenzgang nach Abtastung mit Signalausblendung ...((N/f_c)*alpha_c))
-        %ST_ZP_fft = ST_ZP_fft * (1/max(ST_ZP_fft)) * max(U_sin_pam);
+        %SI_ZP = zeros(1,N);
+        SI_ZP(1:N/f_c) = c(1:N/f_c);
+        SI_ZP = SI_ZP ;%.* max(u_sin) .*(f_c*T_ges);
+        SI_ZP_fft = abs(fft(SI_ZP)./(N/f_c));  % Betragsfrequenzgang nach Abtastung mit Signalausblendung ...((N/f_c)*alpha_c))
+        %SI_ZP_fft = SI_ZP_fft * (1/max(SI_ZP_fft)) * max(U_sin_pam);
         
 %         figure(1);
 %         subplot(Nc,Na,i);        
@@ -56,13 +61,13 @@ for f_c = [10000 20000] % in kHz
         
         figure(2);
         subplot(Nc,Na,i);
-        plot(nf(1:n_U_vis)./1000,U_sin_pam(1:n_U_vis)./N);
+        plot(nf(1:n_U_vis)./1000,U_sin_pam(1:n_U_vis)./1);
         hold on
-        plot(nf(1:n_U_vis)./1000,ST_ZP_fft(1:n_U_vis)./N,'r');
+        plot(nf(1:n_U_vis)./1000,SI_ZP_fft(1:n_U_vis)./1,'r');
         hold off
         axis tight;
         xlabel('f [kHz]');
-        title(['\alpha = ' num2str(alpha_c) ' und f_T = ' num2str(f_c),10]);
+        title(['\alpha = ' num2str(alpha_c) ' und f_T = ' num2str(f_c)]);
         
        
         % Signalverbreiterung (Flat-Top-Sampling);
@@ -71,12 +76,11 @@ for f_c = [10000 20000] % in kHz
         U_sin_sh_pam = abs(fft(u_sin_sh_pam)/N);         % Betragsfrequenzgang nach Abtastung mit Signalverbreiterung
         
         
-        ST_ZP = zeros(1,N);
-        ST_ZP(1:N/f_c) = c(1:N/f_c);
-        ST_ZP = ST_ZP .* max(u_sin) .*(f_c*T_ges);
-        ST_ZP_fft = abs(fft(ST_ZP)./N);  % Betragsfrequenzgang nach Abtastung mit Signalausblendung ...((N/f_c)*alpha_c))
-        %ST_ZP_fft = ST_ZP_fft * (1/max(ST_ZP_fft)) * max(U_sin_pam);        
-        
+        SI_ZP(1:N/f_c) = c(1:N/f_c);
+        SI_ZP = SI_ZP .* max(u_sin) .*(f_c*T_ges);
+        SI_ZP_fft = abs(fft(SI_ZP)./N);  % Betragsfrequenzgang nach Abtastung mit Signalausblendung ...((N/f_c)*alpha_c))
+        %SI_ZP_fft = SI_ZP_fft * (1/max(SI_ZP_fft)) * max(U_sin_pam);        
+       
 %         
 %         figure(3);
 %         subplot(Nc,Na,i);
@@ -85,15 +89,28 @@ for f_c = [10000 20000] % in kHz
 %         xlabel('t [s]');
 %         ylabel('Amplitude [V]');
 %         title(['\alpha = ' num2str(alpha_c) ' und f_T = ' num2str(f_c)]);
+
+
+        SI_ZP = zeros(1,N);
+        SI_ZP(1:N/f_c) = c(1:N/f_c);
+        SI_ZP = SI_ZP ;%.* max(u_sin) .*(f_c*T_ges);
+        SI_ZP_fft = abs(fft(SI_ZP)./(N/f_c));  % Betragsfrequenzgang nach Abtastung mit Signalausblendung ...((N/f_c)*alpha_c))
+        %SI_ZP_fft = SI_ZP_fft * (1/max(SI_ZP_fft)) * max(U_sin_pam);
+        
         
         figure(4);
         subplot(Nc,Na,i);
         plot(nf(1:n_U_vis)./1000,U_sin_sh_pam(1:n_U_vis)./N);
+        hold on
+        plot(nf(1:n_U_vis)./1000,SI_ZP_fft(1:n_U_vis)./N,'r');
+        hold off
         axis tight;
         xlabel('f [kHz]');
-        title([' \alpha = ' num2str(alpha_c) ' und f_T = ' num2str(f_c),10]);
+        title([' \alpha = ' num2str(alpha_c) ' und f_T = ' num2str(f_c)]);
         
 %text(0.5, 1,'\bf Do you like this title?','HorizontalAlignment','center','VerticalAlignment', 'top')        
+
+
 
         i = i + 1;
     end
