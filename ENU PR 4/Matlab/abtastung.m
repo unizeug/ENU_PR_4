@@ -51,13 +51,13 @@ for f_c = [10000 20000] % in kHz
         SI_ZP_fft = abs(fft(SI_ZP)./(N/f_c));  % Betragsfrequenzgang nach Abtastung mit Signalausblendung ...((N/f_c)*alpha_c))
         %SI_ZP_fft = SI_ZP_fft * (1/max(SI_ZP_fft)) * max(U_sin_pam);
         
-%         figure(1);
-%         subplot(Nc,Na,i);        
-%         stem(t(1:n_u_vis),u_sin_pam(1:n_u_vis));
-%         axis tight;
-%         xlabel('t [s]');
-%         ylabel('Amplitude [V]');
-%         title(['\alpha = ' num2str(alpha_c) ' und f_T = ' num2str(f_c)]);
+        figure(1);
+        subplot(Nc,Na,i);        
+        plot(t(1:n_u_vis),u_sin_pam(1:n_u_vis));
+        axis tight;
+        xlabel('t [s]');
+        ylabel('Amplitude [V]');
+        title(['\alpha = ' num2str(alpha_c) ' und f_T = ' num2str(f_c)]);
         
         figure(2);
         subplot(Nc,Na,i);
@@ -81,14 +81,14 @@ for f_c = [10000 20000] % in kHz
         SI_ZP_fft = abs(fft(SI_ZP)./N);  % Betragsfrequenzgang nach Abtastung mit Signalausblendung ...((N/f_c)*alpha_c))
         %SI_ZP_fft = SI_ZP_fft * (1/max(SI_ZP_fft)) * max(U_sin_pam);        
        
-%         
-%         figure(3);
-%         subplot(Nc,Na,i);
-%         stem(t(1:n_u_vis),u_sin_sh_pam(1:n_u_vis));
-%         axis tight;
-%         xlabel('t [s]');
-%         ylabel('Amplitude [V]');
-%         title(['\alpha = ' num2str(alpha_c) ' und f_T = ' num2str(f_c)]);
+        
+        figure(3);
+        subplot(Nc,Na,i);
+        plot(t(1:n_u_vis),u_sin_sh_pam(1:n_u_vis));
+        axis tight;
+        xlabel('t [s]');
+        ylabel('Amplitude [V]');
+        title(['\alpha = ' num2str(alpha_c) ' und f_T = ' num2str(f_c)]);
 
 
         SI_ZP = zeros(1,N);
