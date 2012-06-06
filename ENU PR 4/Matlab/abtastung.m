@@ -61,12 +61,15 @@ for f_c = [10000 20000] % in kHz
         
         figure(2);
         subplot(Nc,Na,i);
-        plot(nf(1:n_U_vis)./1000,U_sin_pam(1:n_U_vis)./1);
+        plot(nf(1:n_U_vis)./1000,U_sin_pam(1:n_U_vis));
         hold on
-        plot(nf(1:n_U_vis)./1000,SI_ZP_fft(1:n_U_vis)./1,'r');
+        plot(nf(1:n_U_vis)./1000,SI_ZP_fft(1:n_U_vis),'r');
         hold off
         axis tight;
         xlabel('f [kHz]');
+        if alpha_c == 0.2
+            ylabel('Amplitude');
+        end
         title(['\alpha = ' num2str(alpha_c) ' und f_T = ' num2str(f_c)]);
         
        
@@ -100,12 +103,15 @@ for f_c = [10000 20000] % in kHz
         
         figure(4);
         subplot(Nc,Na,i);
-        plot(nf(1:n_U_vis)./1000,U_sin_sh_pam(1:n_U_vis)./N);
+        plot(nf(1:n_U_vis)./1000,U_sin_sh_pam(1:n_U_vis));
         hold on
-        plot(nf(1:n_U_vis)./1000,SI_ZP_fft(1:n_U_vis)./N,'r');
+        plot(nf(1:n_U_vis)./1000,SI_ZP_fft(1:n_U_vis),'r');
         hold off
         axis tight;
         xlabel('f [kHz]');
+        if alpha_c == 0.2
+            ylabel('Amplitude');
+        end
         title([' \alpha = ' num2str(alpha_c) ' und f_T = ' num2str(f_c)]);
         
 %text(0.5, 1,'\bf Do you like this title?','HorizontalAlignment','center','VerticalAlignment', 'top')        
