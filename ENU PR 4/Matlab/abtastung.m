@@ -52,10 +52,16 @@ for f_c = [10000 20000] % in kHz
         %SI_ZP_fft = SI_ZP_fft * (1/max(SI_ZP_fft)) * max(U_sin_pam);
         
         figure(1);
+<<<<<<< HEAD
         subplot(Nc,Na,i);
         plot(t(1:n_u_vis),u_sin_pam(1:n_u_vis));
 %         axis tight;
         ylim([-7 7]);
+=======
+        subplot(Nc,Na,i);        
+        plot(t(1:n_u_vis),u_sin_pam(1:n_u_vis));
+        axis tight;
+>>>>>>> refs/heads/master
         xlabel('t [s]');
         ylabel('Amplitude [V]');
         title(['\alpha = ' num2str(alpha_c) ' und f_T = ' num2str(f_c)]);
@@ -89,8 +95,12 @@ for f_c = [10000 20000] % in kHz
         figure(3);
         subplot(Nc,Na,i);
         plot(t(1:n_u_vis),u_sin_sh_pam(1:n_u_vis));
+<<<<<<< HEAD
 %         axis tight;
         ylim([-7 7]);
+=======
+        axis tight;
+>>>>>>> refs/heads/master
         xlabel('t [s]');
         ylabel('Amplitude [V]');
         title(['\alpha = ' num2str(alpha_c) ' und f_T = ' num2str(f_c)]);
