@@ -87,7 +87,7 @@ for f_c = [10000 20000] % in kHz
         
         figure(3);
         subplot(Nc,Na,i);
-        stem(t(1:n_u_vis),u_sin_sh_pam(1:n_u_vis));
+        plot(t(1:n_u_vis),u_sin_sh_pam(1:n_u_vis));
         axis tight;
         xlabel('t [s]');
         ylabel('Amplitude [V]');
@@ -135,12 +135,12 @@ SUPTITLE(['\bf Flat-Top Abtastung',10])
 %             SUPTITLE(['\bf Flat-Top Abtastung',10])
 %         end  
 
-        figure(1);
-        print -painters -dpdf -r600 ../Bilder/ShapeTop_Sign.pdf
-        figure(2);
-        print -painters -dpdf -r600 ../Bilder/ShapeTop_freq.pdf
-        figure(3);
-        print -painters -dpdf -r600 ../Bilder/FlatTop_Sign.pdf
-        figure(4);
-        print -painters -dpdf -r600 ../Bilder/FlatTop_freq.pdf
+%         figure(1);
+%         print -painters -dpdf -r600 ../Bilder/ShapeTop_Sign.pdf
+%         figure(2);
+%         print -painters -dpdf -r600 ../Bilder/ShapeTop_freq.pdf
+%         figure(3);
+%         print -painters -dpdf -r600 ../Bilder/FlatTop_Sign.pdf
+%         figure(4);
+%         print -painters -dpdf -r600 ../Bilder/FlatTop_freq.pdf
 
