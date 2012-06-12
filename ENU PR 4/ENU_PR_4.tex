@@ -106,17 +106,58 @@
     
     \subsection{Labordurchführung}
     \begin{quote}
-     
+     Für das Signalausblendung (Shape-Top-Sampling) und das
+     Signalverbreiterung (Flat-Top-Sampling) wird das Dual Analog Switch- Modul
+     verwendet.
+     Bei der beiden Samplingvarianten wird auf den Eingang Control 1 ein
+     unipolaren Rechtecksignal mit einer Spannung von 0 bis 5 Volt, variabler
+     Frequenz (10 und 20 Hz) und variablem Tastverhältnis (0,2 , 0,5 und 0,7)
+     gelegt. Dieses wird vom Signalgenerator gelierfert.
+     Es sollen drei abzutastende Signale untersucht werden. Zum einen ein
+     bipolares, mittelwertfreies Rechtecksignal mit einer Spitze-Spitze-Spannung von 4 Volt und einer
+     Frequenz von 2 kHz, welches vom Master Signals Modul geliefert wird. Dafür
+     wird der Ausgang 2 kHz DIGITAL verwendet. Dieser liefert allerdings ein
+     Rechtecksignal mit der Spannung von 0 bis 5 Volt. Damit man das
+     bipolare Signal erhält, wird das ADDER Modul verwendet. Das Rechtecksignal
+     wird auf den Eingang B gegeben, wo das Signal mittel der Verstärkung von
+     4/5 auf 0 bis 4 Volt eingestellt wird. Da der ADDER invertiert muss zuletzt
+     nur noch ein Offset von 2 Volt mit Hilfe des Variable DC Moduls gegeben
+     werden.\\
+     \noindent\hspace*{4mm}% 
+     Als zweites Signal soll das eben erstellte bipolare Rechtecksignal noch vor
+     der Abtastung tiefpassgefiltert werden. Dazu wird das RC LPF Modul, also
+     ein Tiefpass bestehend aus einem Kondensator und einer Spule, verwendet.
+     Zum anderen soll ein 2 kHz Sinussignal abgetastet werden, welches ebenfalls
+     dem Master Signals Modul entnommen werden kann.\\
+     \noindent\hspace*{4mm}% 
+     Bei der Signalausblendung wird das abzutastende Signal auf den Eingang
+     IN1 gegeben und der Ausgang am Out abgegriffen. Damit wird im Prinzip nur
+     ein Schalter geöffnet und geschlossen, was dazu führt, dass die Kontur
+     des Signal im Abtastpuls mit übertragen wird (daher Shape-Top).\\
+     Bei der Signalverbreiterung wird das Quellensignal noch zusätzlich vorher
+     durch ein S/H-Glied, also ein Abtast- und Halteglied (S&H
+     IN, S&H OUT) und von da aus in IN1 geführt. Dieses sorgt dafür, dass bei
+     einem Abtastimpuls nur ein Wert durchgängig übertragen wird (daher
+     Flat-Top).\\ 
+     \noindent\hspace*{4mm}% 
+     Zuletzt wird das Signal zur Rekonstruktion noch durch einen Tiefpassfilter
+     mit variabler Grenzfrequenz geführt (TUNEABLE LPF IN/OUT).\\
+     \noindent\hspace*{4mm}% 
+     Für die Messungen wird das Abtastsignal sowohl in der Frequenz, als auch in
+     dem Tastgrad, wie oben gegeben für Signalverbreiterung und
+     Signalausblendung) variiert.
+     Im zweiten Teil soll ein Sprachsignal mit Signalausblendung oder
+     Signalverbreiterung abgetastet werden. Dazu wird ein Mikrofon des SPEECH
+     Modul genutzt und beim BUFFER Modul ein Kopfhörer angeschlossen.
     \end{quote}
     
     
-    \subsection{Auswertung \& Theorie}
+    \subsection{Theorie \& Auswertung}
     \begin{quote}
      
     \end{quote}
     
 \end{quote}
-
 
 
 
