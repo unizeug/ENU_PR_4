@@ -9,7 +9,7 @@ function FFTshiftplot(y, T_ges, f_T, A,farbe, fignum)
 
 
 % Zeropadding Faktor (1: kein Padding, 3: scheint gut zu sein)
-zpf = 2;
+zpf = 3;
 
 temp = zeros(length(y)*zpf,1);
 temp(1:length(y)) = y;
@@ -46,7 +46,7 @@ ylabel('u [V]');
 %Darstellung des Amplitudenspektrums
 subplot(3,1,2);
 stem(f_DFT, y_DFT_abs,'.-');
-AXIS([-5000 5000 0 ]);%max(y_DFT_abs)*1.2]);
+AXIS([0 5000 0 1]);%max(y_DFT_abs)*1.2]);
 %xlim ([-500 500])
 title('Amplitudenspektrum');
 xlabel('f [Hz]');

@@ -1,4 +1,4 @@
-function FFTshiftplot(y, T_ges, f_T, A,farbe, fignum)
+function FFTshiftplotZP(y, T_ges, f_T, A,farbe, fignum)
 
 % y         - Zeitvektor
 % T_ges     - Dauer des Signals
