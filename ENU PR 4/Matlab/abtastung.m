@@ -142,12 +142,12 @@ SUPTITLE(['\bf Flat-Top Abtastung',10])
 %             SUPTITLE(['\bf Flat-Top Abtastung',10])
 %         end  
 
-%         figure(1);
-%         print -painters -dpdf -r600 ../Bilder/ShapeTop_Sign.pdf
-%         figure(2);
-%         print -painters -dpdf -r600 ../Bilder/ShapeTop_freq.pdf
-%         figure(3);
-%         print -painters -dpdf -r600 ../Bilder/FlatTop_Sign.pdf
-%         figure(4);
-%         print -painters -dpdf -r600 ../Bilder/FlatTop_freq.pdf
+        figure(1);
+        print -painters -dpdf -r600 ../Bilder/ShapeTop_Sign.pdf
+        figure(2);
+        print -painters -dpdf -r600 ../Bilder/ShapeTop_freq.pdf
+        figure(3);
+        print -painters -dpdf -r600 ../Bilder/FlatTop_Sign.pdf
+        figure(4);
+        print -painters -dpdf -r600 ../Bilder/FlatTop_freq.pdf
 
