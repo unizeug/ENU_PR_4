@@ -42,6 +42,7 @@
                     k\omega_T))\\
                     &= \alpha \cdot \sum_{k=-\infty}^{\infty} \left [ si(k \pi \alpha) \cdot F (j(\omega - k\omega_T))
                     \right]\\
+                    \label{eq:shape}
                 \end{split}
             \end{equation*}
             
@@ -59,6 +60,7 @@
                     \alpha T \cdot si (\frac{\alpha \omega T}{2})\\
                     &= \alpha \cdot si \left( \frac{\omega \alpha T}{2} \right) \cdot \sum_{k=-\infty}^{\infty} F(j(\omega -
                     k\omega_T))\\
+                    \label{eq:flat}
                 \end{split}
             \end{equation*}
             
@@ -155,10 +157,13 @@
      \noindent\hspace*{4mm}% 
      Für die Messungen wird das Abtastsignal sowohl in der Frequenz, als auch in
      dem Tastgrad, wie oben gegeben für Signalverbreiterung und
-     Signalausblendung variiert.
-     Im zweiten Teil soll ein Sprachsignal mit Signalausblendung oder
-     Signalverbreiterung abgetastet werden. Dazu wird ein Mikrofon des SPEECH
-     Modul genutzt und beim BUFFER Modul ein Kopfhörer angeschlossen.
+     Signalausblendung variiert. 
+     Dabei kann man einige der Kombinationen auslassen. Da sich die
+     Veränderungen von $\alpha$ bei 10 und 20 kHz ähnlich auswirken, wird im
+     Versuch nur der Tastgrad für 20 kHz variiert.\\
+     \noindent\hspace*{4mm}% 
+     Im zweiten Teil soll ein
+     Sprachsignal mit Signalausblendung oder Signalverbreiterung abgetastet werden. Dazu wird ein Mikrofon des SPEECH Modul genutzt und beim BUFFER Modul ein Kopfhörer angeschlossen.
     \end{quote}
     
     
@@ -167,11 +172,18 @@
         
         Im Labor haben wir dann folgende Messungen durchgefüht.
         
-        \TODO{Thommy: wollen wir ne Tabelle?}
+        \TODO{Thommy: wollen wir ne Tabelle? Neeeeiiiiiiin das sieht man dann
+        doch an den Bildern}
+        
+        
         
         \subsubsection{änderung der Trägerfrequenz}
         \begin{quote}
             
+            Der Theorie nach sollte das Signal, das mit der höheren
+            Frequenz abgestastet wird auf Grund der Mehrzahl an Stützstellen
+            auch besser rekonstruiert werden.
+           
             die gemessenen Werte sehen so aus\\
             
             FIGURE\\
@@ -188,7 +200,14 @@
 
         \subsubsection{änderung des \alpha }
         \begin{quote}
-            
+             
+             Der Theorie nach sollte das Signal, welches mit einem größeren
+             Tastgrad abgetastet wird auch eine höhere Amplitude haben, da wie
+             in den Formeln \ref{eq:shape} und \ref{eq:flat} als Vorfaktor
+             auftauchen. Für ein kleineres $\alpha$ sollte sich aber eine
+             bessere Rekonstruktion des Ausgangssignals ergeben, da das
+             Abtastsignal immer mehr einem für die Abtastung idealen
+             Deltaimpuls ähnelt.
         \end{quote}
 
 
