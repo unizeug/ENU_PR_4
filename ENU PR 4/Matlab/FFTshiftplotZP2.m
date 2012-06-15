@@ -36,25 +36,25 @@ f_DFT = f_T/(N-1)*((-N/2):(N/2-1));
 %neues Fenster zur Darstellung
 figure(fignum);
 %Darstellung des Zeitsignals
-subplot(3,1,1);
+subplot(2,1,1);
 plot(t,y,farbe);
 %AXIS([0 T_ges/zpf/24 min(y)*1.21 max(y)*1.2])
-AXIS([0 0.002 -4 4])
+AXIS([0.00015 0.00075 -4 4])
 title('Zeitsignal');
 xlabel('t [s]');
 ylabel('u [V]');
 %Darstellung des Amplitudenspektrums
-subplot(3,1,2);
+subplot(2,1,2);
 stem(f_DFT, y_DFT_abs,'.-');
-AXIS([0 5000 0 1]);%max(y_DFT_abs)*1.2]);
+AXIS([0 5000 0 2]);%max(y_DFT_abs)*1.2]);
 %xlim ([-500 500])
 title('Amplitudenspektrum');
 xlabel('f [Hz]');
 ylabel('A(f)');    
 %Darstellung des Phasenspektrums
-subplot(3,1,3);
-plot(f_DFT, y_DFT_phase);
-%AXIS([0 4E3 0 0.4E-5])
-title('Phasenspektrum');
-xlabel('f [Hz]');
-ylabel('pi(f)');
+% subplot(3,1,3);
+% plot(f_DFT, y_DFT_phase);
+% %AXIS([0 4E3 0 0.4E-5])
+% title('Phasenspektrum');
+% xlabel('f [Hz]');
+% ylabel('pi(f)');
