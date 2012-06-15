@@ -102,10 +102,6 @@
     \end{quote}
     
     
-    
-    
-    
-    
 \end{quote}
 
 %--------------------------------------------------------------------
@@ -120,15 +116,16 @@
     \begin{quote}
      Für die Signalausblendung (Shape-Top-Sampling) und die Signalverbreiterung (Flat-Top-Sampling) wird das Dual
      Analog Switch- Modul verwendet.
-     Bei beiden Samplingvarianten wird auf den Eingang Control 1 ein unipolares Rechtecksignal mit einer Spannung von 0
+     Bei beiden Samplingvarianten wird auf den Eingang "`Control 1"' ein unipolares Rechtecksignal mit einer Spannung von 0
      bis 5 Volt, variabler Frequenz (10 und 20 Hz) und variablem Tastverhältnis (0,2 , 0,5 und 0,7) gelegt. Dieses wird
      vom Signalgenerator geliefert.
      Es sollen drei abzutastende Signale untersucht werden. Zum einen ein bipolares, mittelwertfreies Rechtecksignal mit
      einer Spitze-Spitze-Spannung von 4 Volt und einer Frequenz von 2 kHz, welches vom Master Signals Modul geliefert
      wird. Dafür wird der Ausgang 2 kHz DIGITAL verwendet. Dieser liefert allerdings ein Rechtecksignal mit der Spannung
      von 0 bis 5 Volt. Damit man das bipolare Signal erhält, wird das ADDER Modul verwendet. Das Rechtecksignal wird auf
-     den Eingang B gegeben, wo das Signal mittels der Verstärkung von 4/5 auf 0 bis 4 Volt eingestellt wird. Da der
-     ADDER invertiert muss zuletzt nur noch ein Offset von 2 Volt mit Hilfe des Variable DC Moduls gegeben werden.\\
+     den Eingang B gegeben, wo das Signal mittels der Verstärkung von 4/5 auf 0 bis 4 Volt eingestellt wird. Da das
+     Signal noch unipolar ist muss zuletzt ein Offset von -2 Volt mit Hilfe des Variable DC Moduls addiert
+     werden.\\
      \noindent\hspace*{4mm}
      Als zweites Signal soll das eben erstellte bipolare Rechtecksignal vor der Abtastung tiefpassgefiltert werden. Dazu
      wird das RC LPF Modul, also ein Tiefpass bestehend aus einem Kondensator und einer Spule, verwendet.
@@ -145,10 +142,10 @@
      Zuletzt wird das Signal zur Rekonstruktion noch durch einen Tiefpassfilter mit variabler Grenzfrequenz geführt
      (TUNEABLE LPF IN/OUT).\\
      \noindent\hspace*{4mm}
-     Für die Messungen wird das Abtastsignal sowohl in der Frequenz, als auch in dem Tastgrad, wie oben gegeben für
+     Für die Messungen wird das Abtastsignal sowohl in der Frequenz, als auch im Tastgrad, wie oben gegeben für
      Signalverbreiterung und Signalausblendung variiert.
-     Dabei kann man einige der Kombinationen auslassen. Da sich die Veränderungen von $\alpha$ bei 10 und 20 kHz ähnlich
-     auswirken, wird im Versuch nur der Tastgrad für 20 kHz variiert.\\
+     Dabei kann man einige der Kombinationen auslassen. Da sich z.B. die Veränderungen von $\alpha$ bei 10 und 20 kHz
+     ähnlich auswirken, wird im Versuch nur der Tastgrad für 20 kHz variiert.\\
      \noindent\hspace*{4mm}
      Im zweiten Teil soll ein Sprachsignal mit Signalausblendung oder Signalverbreiterung abgetastet werden. Dazu wird
      ein Mikrofon des SPEECH Modul genutzt und beim BUFFER Modul ein Kopfhörer angeschlossen.
@@ -162,8 +159,6 @@
     
     Im Labor haben wir dann folgende Messungen durchgefüht.
     
-    \TODO{Thommy: wollen wir ne Tabelle? Neeeeiiiiiiin das sieht man dann
-    doch an den Bildern}
     
     \subsection{Flat-Top Sampling}
     \begin{quote}
@@ -178,7 +173,7 @@
             Das tiefpassgefilterte Rechtecksignal sollte aufgrund der entnommenen hohen Frequenzen weniger Überschwingen
             nach der rekonstruktion enthalten.
             Der nahezu reine Sinus sollte ziemlich gut rekonstruiert werden können, da er theoretisch nur einen
-            Frequenzanteil enthält.
+            Frequenzanteil enthält. Alle wiederholungen des Spektrums können somit sehr einfach weggefiltert werden.
             
             
             Man kann gut erkennen, dass die Filterung des Rechtecksignals vor der Abtastung eine Glättung des
@@ -218,7 +213,8 @@
         \subsubsection{Änderung der Trägerfrequenz}
         \begin{quote}
             
-            Auch bei der Shape-Top Abtastung 
+            Auch bei der Shape-Top Abtastung sollte aus der Vergrößerung der Trägerfrequenz eine bessere
+            Rekonstruktion resultieren.
             
         \end{quote}
         
@@ -228,18 +224,20 @@
         \subsubsection{Änderung des Tastgrades}
         \begin{quote}
             
-             Bei der Signalausblendung sollte das Basisband (k=0) um $\alpha$ verringern. Alle anderen Bänder sollten
-             sich noch zusätzlich um den Faktor $si(k\alpha\pi)$ verringern, was zu einer Verzerrung führt.
+             Bei der Signalausblendung sollte sich das Basisband (k=0) um $\alpha$ verringern. Alle anderen Bänder
+             sollten sich noch zusätzlich um den Faktor $si(k\alpha\pi)$ verringern%, was zu einer Verzerrung führt.
+             % (gibt keine Verzerrung)
              Im Gegensatz dazu werden bei der Signalverbreiterung alle Bänder mit dem Faktor $si(\omega \alpha T/2)$
              verzerrt. Da damit das Basisbandsignal ebenfalls verzerrt ist, kann das Signal auch mit einem idealen
              Tiefpass nicht wiedergewonnen werden.
+             \TODO{soll das zu flat-top?}
              
              Wie man erkennen kann, ähnelt die Rekonstruktion der Signalausblendung eher dem Urspungssignal, was wie
              nach der Theorie erwartet an dem verzerrten Basisband bei der Signalverbreiterung liegt.
              
         \end{quote}
-
-
+        
+        
         
     \end{quote}
     
@@ -248,7 +246,7 @@
     
     
 \end{quote}
-    
+
 
 
 
