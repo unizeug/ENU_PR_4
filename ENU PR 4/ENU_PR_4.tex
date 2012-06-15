@@ -180,10 +180,20 @@
         \subsubsection{änderung der Trägerfrequenz}
         \begin{quote}
             
-            Der Theorie nach sollte das Signal, das mit der höheren
-            Frequenz abgestastet wird auf Grund der Mehrzahl an Stützstellen
+            Der Theorie nach sollte das Signal, das mit einer höheren
+            Frequenz abgestastet wird, auf Grund der Mehrzahl an Stützstellen
             auch besser rekonstruiert werden.
-           
+            Das reine Rechtecksignal sollte ein starkes Überschwingen zeigen, da
+            es unendlich viele Frequenzanteile enthält und das Abtasttheorem für
+            die großen Frequenzen nicht eingehlten werden kann.
+            Das tiefpassgefilterte Rechtecksignal sollte aufgrund der
+            entnommenen hohen Frequenzen weniger Überschwingen nach der rekonstruktion enthalten.
+            Der nahezu reine Sinus sollte ziemlich gut rekonstruiert werden
+            können, da er effektiv nur einen Frequenzanteil enthält.
+            
+            
+            Man kann gut erkennen, dass die Filterung des Rechtecksignals vor
+            der Abtastung eine Glättung des rekonstruierten Signals hervorruft.  
             die gemessenen Werte sehen so aus\\
             
             FIGURE\\
@@ -202,12 +212,25 @@
         \begin{quote}
              
              Der Theorie nach sollte das Signal, welches mit einem größeren
-             Tastgrad abgetastet wird auch eine höhere Amplitude haben, da wie
-             in den Formeln \ref{eq:shape} und \ref{eq:flat} als Vorfaktor
-             auftauchen. Für ein kleineres $\alpha$ sollte sich aber eine
+             Tastgrad abgetastet wird auch eine höhere Amplitude im Spektrum und
+             im rekonstruierten Signal haben, da wie in den Formeln
+             \ref{eq:shape} und \ref{eq:flat} als Vorfaktor auftauchen. Für ein kleineres $\alpha$ sollte sich aber eine
              bessere Rekonstruktion des Ausgangssignals ergeben, da das
              Abtastsignal immer mehr einem für die Abtastung idealen
              Deltaimpuls ähnelt.
+             Bei der Signalausblendung sollte das Basisband (k=0) um $\alpha$
+             verringern. Alle anderen Bänder sollten sich noch zusätzlich um den
+             Faktor $si(k\alpha\pi)$ verringern, was zu einer Verzerrung führt.
+             Im Gegensatz dazu werden bei der Signalverbreiterung alle Bänder
+             mit dem Faktor $si(\omega\alphaT/2)$ verzerrt. Da damit das
+             Basisbandsignal ebenfalls verzerrt ist, kann das Signal auch mit
+             einem idealen Tiefpass nicht wiedergewonnen werden.
+             
+             
+             Wie man erkennen kann, ähnelt die Rekonstruktion der
+             Signalausblendung eher dem Urspungssignal, was wie nach der Theorie
+             erwartet an dem verzerrten Basisband bei der Signalverbreiterung
+             liegt.
         \end{quote}
 
 
