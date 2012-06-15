@@ -1,4 +1,4 @@
-function FFTshiftplot(y, T_ges, f_T, A,farbe, fignum)
+function FFTshiftplotZP2(y, T_ges, f_T, A,farbe, fignum)
 
 % y         - Zeitvektor
 % T_ges     - Dauer des Signals
@@ -9,7 +9,7 @@ function FFTshiftplot(y, T_ges, f_T, A,farbe, fignum)
 
 
 % Zeropadding Faktor (1: kein Padding, 3: scheint gut zu sein)
-zpf = 2;
+zpf = 5;
 
 temp = zeros(length(y)*zpf,1);
 temp(1:length(y)) = y;
@@ -26,7 +26,7 @@ y_DFT = fftshift(fft(y));
 N = length(y);
 %Betragsspektrum
 %y_DFT_abs = 10*LOG10(abs(y_DFT)/N);
-y_DFT_abs = abs(y_DFT)/N;
+y_DFT_abs = abs(y_DFT)/(N/zpf);
 %Phasenspektrum
 y_DFT_phase = unwrap(angle(y_DFT))/N;
 %Zeitachse
