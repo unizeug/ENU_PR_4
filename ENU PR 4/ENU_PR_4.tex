@@ -173,8 +173,30 @@
             Das tiefpassgefilterte Rechtecksignal sollte aufgrund der entnommenen hohen Frequenzen weniger Überschwingen
             nach der rekonstruktion enthalten.
             Der nahezu reine Sinus sollte ziemlich gut rekonstruiert werden können, da er theoretisch nur einen
-            Frequenzanteil enthält. Alle wiederholungen des Spektrums können somit sehr einfach weggefiltert werden.
+            Frequenzanteil enthält. Alle Wiederholungen des Spektrums können somit sehr einfach weggefiltert werden.
             
+            \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/flatrec10_05}
+                          \caption{Shape-Top-Sampling Rechteck 10 kHz alpha 0,5}
+		                  \label{fig:flatrec10_05}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/flatrec20_05}
+                       \caption{Flat-Top-Sampling Rechteck 20 kHz alpha 0,5}
+		              \label{fig:flatrec20_05}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
             
             Man kann gut erkennen, dass die Filterung des Rechtecksignals vor der Abtastung eine Glättung des
             rekonstruierten Signals hervorruft.
