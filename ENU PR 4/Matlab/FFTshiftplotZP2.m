@@ -38,15 +38,15 @@ figure(fignum);
 %Darstellung des Zeitsignals
 subplot(2,1,1);
 plot(t,y,farbe);
-%AXIS([0 T_ges/zpf/24 min(y)*1.21 max(y)*1.2])
-AXIS([0.00015 0.00075 -4 max(y_DFT_abs)*1.2]);
+%AXIS([0 T_ges/zpf/24 min(y)*1.21 max(y)*1.2]);
+AXIS([0.00015 0.00075 min(y)*1.21 max(y)*1.2]);
 title('Zeitsignal');
 xlabel('t [s]');
 ylabel('u [V]');
 %Darstellung des Amplitudenspektrums
 subplot(2,1,2);
 stem(f_DFT, y_DFT_abs,'.-');
-AXIS([0 5000 0 2]);%max(y_DFT_abs)*1.2]);
+AXIS([0 4000 0 ceil(max(y_DFT_abs*1.2)*10)/10]);
 %xlim ([-500 500])
 title('Amplitudenspektrum');
 xlabel('f [Hz]');
