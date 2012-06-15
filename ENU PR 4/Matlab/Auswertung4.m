@@ -32,27 +32,27 @@ shapeaudio= load('../Messwerte/audiosignalzeitkurzashapetop.mat');
 
 
 % ich denke mal, man muss T_ges und f_T nicht jedes mal neu berechnen. wir
-% haben ja nichts an den aufnahmeeinstellungen ge√§ndert oder? 
+% haben ja nichts an den aufnahmeeinstellungen ge‰ndert oder? 
 
-S = flatrec20_02;
+S = flatrecFil20_05;
 T_ges = S.Tinterval*S.Length;
 f_T = 1/S.Tinterval;
 
 FFTshiftplotZP2(S.B,T_ges,f_T,4,'b',1)
 
-S = flatrec20_02;
+S = flatrecFil20_05;
 T_ges = S.Tinterval*S.Length;
 f_T = 1/S.Tinterval;
 
 FFTshiftplotZP2(S.A,T_ges,f_T,4,'b',2)
 
-S = flatrec20_07;
+S = shaperecFil20_05;
 T_ges = S.Tinterval*S.Length;
 f_T = 1/S.Tinterval;
 
 FFTshiftplotZP2(S.B,T_ges,f_T,4,'b',3)
 
-S = flatrec20_07;
+S = shaperecFil20_05;
 T_ges = S.Tinterval*S.Length;
 f_T = 1/S.Tinterval;
 
