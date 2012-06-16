@@ -99,6 +99,9 @@
     \begin{quote}
         Um unsere Durchführungsergebnisse mit idealen Werten vergleichen zu können haben wir die Praktikumsaufgaben in
         Matlab simuliert.
+        
+         \TODO{Hier müssen noch die Bilder mit sinnvoller Darstellung eingefügt werden????}
+         
     \end{quote}
     
     
@@ -175,6 +178,31 @@
             Der nahezu reine Sinus sollte ziemlich gut rekonstruiert werden können, da er theoretisch nur einen
             Frequenzanteil enthält. Alle Wiederholungen des Spektrums können somit sehr einfach weggefiltert werden.
             
+            \TODO{Soll überhaupt noch ein Sinus eingefügt werden????}
+            
+            \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/flatrec10_05abget_zeit}
+                          \caption{Rechteck 10 kHz alpha 0,5 moduliertes Signal}
+		                  \label{fig:flatrec10_05zeit}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/flatrec20_05abget_zeit}
+                       \caption{Rechteck 20 kHz alpha 0,5 moduliertes Signal}
+		              \label{fig:flatrec20_05zeit}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+            
             \begin{center}
             \begin{tabular}{ll}
             
@@ -182,7 +210,7 @@
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
                         \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/flatrec10_05}
-                          \caption{Shape-Top-Sampling Rechteck 10 kHz alpha 0,5}
+                          \caption{Rechteck 10 kHz alpha 0,5 Rekonstruktion}
 		                  \label{fig:flatrec10_05}
                     \end{figure}
                 \end{minipage}
@@ -190,7 +218,7 @@
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
                         \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/flatrec20_05}
-                       \caption{Flat-Top-Sampling Rechteck 20 kHz alpha 0,5}
+                       \caption{Rechteck 20 kHz alpha 0,5 Rekonstruktion}
 		              \label{fig:flatrec20_05}
                     \end{figure}
                 \end{minipage}
@@ -198,31 +226,81 @@
             \end{tabular}
             \end{center}
             
-            Man kann gut erkennen, dass die Filterung des Rechtecksignals vor der Abtastung eine Glättung des
-            rekonstruierten Signals hervorruft.
-            die gemessenen Werte sehen so aus\\
             
-            FIGURE\\
-            \\
+            An den Bildern \ref{fig:flatrec20_05} und \ref{fig:flatrec10_05} kann man weiterhin erkennen, dass das
+            Signal, das mit 20 kHz Flat-Top abgetastet wurde wie erwartet mit weniger Überschwingen rekonstruiert werden kann.
             
+          
             
-            verglichen mit den Simulierten werten\\
-            
-            FIGURE\\
-            
-            is das toll\\
+          
         \end{quote}
         
         
         \subsection{Änderung des Tastgrades}
         \begin{quote}
              
-             Der Theorie nach sollte das Signal, welches mit einem größeren Tastgrad abgetastet wird auch eine höhere
-             Amplitude im Spektrum und im rekonstruierten Signal haben, da wie in den Formeln \ref{eq:shape} und
-             \ref{eq:flat} als Vorfaktor auftauchen. Für ein kleineres $\alpha$ sollte sich aber eine bessere
-             Rekonstruktion des Ausgangssignals ergeben, da das Abtastsignal immer mehr einem, für die Abtastung
-             idealen, Deltaimpuls ähnelt.
+             Der Theorie nach sollte bei Signalverbreiterung das Signal, welches mit einem größeren Tastgrad abgetastet
+             wird auch eine höhere Amplitude im Spektrum und im rekonstruierten Signal haben, da wie in den Formeln \ref{eq:shape} und
+             \ref{eq:flat} als Vorfaktor auftauchen. Zusätzlich werden alle Bänder mit dem Faktor $si(\omega
+             \alpha T/2)$ verzerrt. Da damit das Basisbandsignal ebenfalls verzerrt ist, kann das Signal auch mit einem idealen
+             Tiefpass nicht wiedergewonnen werden. Für ein kleineres $\alpha$ sollte sich aber eine
+             Rekonstruktion des Ausgangssignals mit weniger Überschwingen ergeben, da das Abtastsignal immer mehr einem,
+             für die Abtastung idealen, Deltaimpuls ähnelt.
+             \TODO{Das es mit dem dünneren Impuls besser ist, sieht man nicht wirklich, oder????}
              
+             
+              \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/flatrec20_02abget_zeit}
+                          \caption{Rechteck 20 kHz alpha 0,2 moduliertes Signal}
+		                  \label{fig:flatrec20_02zeit}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/flatrec20_07abget_zeit}
+                       \caption{Rechteck 20 kHz alpha 0,7 moduliertes Signal}
+		              \label{fig:flatrec20_07zeit}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+            
+            \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/flatrec20_02}
+                          \caption{Rechteck 20 kHz alpha 0,2 Rekonstruktion}
+		                  \label{fig:flatrec20_02}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/flatrec20_07}
+                       \caption{Rechteck 20 kHz alpha 0,7 Rekonstruktion}
+		              \label{fig:flatrec20_07}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+             
+            Wie schon bei $\alpha=0,5$ haben die Spektren des modulierten Signals in Abb. \ref{fig:flatrec20_05} und
+            \ref{fig:flatrec10_05} und des rekonstruierten Signals (was dem Ausgangssignal entsprechen soll) Abb. \ref{fig:flatrec10_05zeit} und
+            \ref{fig:flatrec20_05zeit} in der Amplitude annähernd den Faktor 0,5 Unterschied, was dem $\alpha$
+            aus der Formel \ref{eq:flat} als Faktor zwischen dem Spektrm des modulierten Signals und des
+            Ausgangssignals entspricht.
+                        
              
         \end{quote}
     
@@ -238,25 +316,75 @@
             Auch bei der Shape-Top Abtastung sollte aus der Vergrößerung der Trägerfrequenz eine bessere
             Rekonstruktion resultieren.
             
+            \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/shaperec10_05abget_zeit}
+                          \caption{Rechteck 10 kHz alpha 0,5 moduliertes Signal}
+		                  \label{fig:shaperec10_05zeit}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/shaperec20_05abget_zeit}
+                       \caption{Rechteck 20 kHz alpha 0,5 moduliertes Signal}
+		              \label{fig:shaperec20_05zeit}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+            
+            \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/shaperec10_05}
+                          \caption{Rechteck 10 kHz alpha 0,5 Rekonstruktion}
+		                  \label{fig:shaperec10_05}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/shaperec20_05}
+                       \caption{Rechteck 20 kHz alpha 0,5 Rekonstruktion}
+		              \label{fig:shaperec20_05}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+            
         \end{quote}
         
+        In den Abb. \ref{fig:shaperec10_05} und \ref{fig:shaperec20_05} ist der Unterschied der Rekonstruktion zwischen
+        10 und 20 kHz Signalausblendung noch deutlicher zu erkennen als bei der Signalverbreiterung.
         
-        
+        \TODO{Was kann man da noch erkennen????}
         
         \subsubsection{Änderung des Tastgrades}
         \begin{quote}
             
-             Bei der Signalausblendung sollte sich das Basisband (k=0) um $\alpha$ verringern. Alle anderen Bänder
-             sollten sich noch zusätzlich um den Faktor $si(k\alpha\pi)$ verringern%, was zu einer Verzerrung führt.
-             % (gibt keine Verzerrung)
+                      
+             Im Gegensatz zur Signalverbreiterung sollte sich bei der Signalausblendung das Basisband (k=0) nur um den
+             Faktor $\alpha$ verringern.
+             Alle anderen Bänder sollten sich noch zusätzlich um den Faktor $si(k\alpha\pi)$ verringern%, was zu einer Verzerrung führt.
+             % (gibt keine Verzerrung) ja stimmt, kann ich auch nicht wirklich erkennen, sollte aber eigentlich so sein,
+             % kp skript seite 263 im pdf reader
              Dieses Verhalten zeigt sich in der Praxis (Abb. \ref{fig:shaperec} und \ref{fig:flatrec})wie auch schon
-             in Skizze
-             \ref{fig:skizze}
+             in Skizze .\ref{fig:skizze}
              
              
              
              
-                    \begin{center}
+            \begin{center}
             \begin{tabular}{ll}
             
             \hspace{-5cm}
@@ -279,8 +407,10 @@
             \end{tabular}
             \end{center}
             
-            Da bei der Signalverbreiterung die Amplituden im Spektrum von der Frequenz abhängen, haben die beiden
-            Nebenpeaks jeweils eine andere Amplitude.
+            Da bei der Signalverbreiterung die Amplituden im Spektrum von der Frequenz abhängen (Vorfaktor: $si(\omega
+             \alpha T/2)$), haben die beiden Nebenpeaks jeweils eine andere Amplitude. Hingegen ist der Vorfaktor bei
+             der Signalaublendung unabhängig von der Frequenz und damit haben die jeweils zueinander
+             gehörenden Peaks die gleiche Amplitude.
              
     
     %\begin{figure}[H]
@@ -293,10 +423,58 @@
              
              
              
-             Im Gegensatz dazu werden bei der Signalverbreiterung alle Bänder mit dem Faktor $si(\omega \alpha T/2)$
-             verzerrt. Da damit das Basisbandsignal ebenfalls verzerrt ist, kann das Signal auch mit einem idealen
-             Tiefpass nicht wiedergewonnen werden.
-             \TODO{soll das zu flat-top?}
+             
+             
+             \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/shaperec20_02abget_zeit}
+                          \caption{Rechteck 20 kHz alpha 0,2 moduliertes Signal}
+		                  \label{fig:shaperec20_02zeit}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/shaperec20_07abget_zeit}
+                       \caption{Rechteck 20 kHz alpha 0,7 moduliertes Signal}
+		              \label{fig:shaperec20_07zeit}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+            
+            \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/shaperec20_02}
+                          \caption{Rechteck 20 kHz alpha 0,2 Rekonstruktion}
+		                  \label{fig:shaperec20_02}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/shaperec20_07}
+                       \caption{Rechteck 20 kHz alpha 0,7 Rekonstruktion}
+		              \label{fig:shaperec20_07}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+             
+             Die Spektren weisen auch bei der Signalausblendung für verschiedene $\alpha$ unterschiedliche Amplituden
+             auf, wie es durch den Faktor $\alpha$ genau wie schon bei der Signalverbreiterung der Fall war.
+             
+             \TODO{Warum allerdings der unterschied zwischen moduliert und rekonstruiert immer 0,5 im Spektrum????} 
              
              Wie man erkennen kann, ähnelt die Rekonstruktion der Signalausblendung eher dem Urspungssignal, was wie
              nach der Theorie erwartet an dem verzerrten Basisband bei der Signalverbreiterung liegt.
@@ -307,10 +485,100 @@
         
     \end{quote}
     
+    \subsection{Vergleich Shape-Top und Flat-Top Sampling}
+      \begin{quote}
+      
+      \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/flatrecFil20_05abget_zeit}
+                          \caption{Flat-Top gefiltertes Rechteck moduliertes Signal}
+		                  \label{fig:flatrecFil20_05zeit}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                       \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/shaperecFil20_05abget_zeit}
+                       \caption{Shape-Top gefiltertes Rechteck moduliertes Signal}
+		              \label{fig:shaperecFil20_05zeit}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+            
+            \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/flatrecFil20_05}
+                          \caption{Shape-Top gefiltertes Rechteck Rekonstruktion}
+		                  \label{fig:flatrecFil20_05}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/shaperecFil20_05}
+                       \caption{Shape-Top gefiltertes Rechteck Rekonstruktion}
+		              \label{fig:shaperecFil20_05}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+       
+       In den Abb. \ref{fig:shaperecFil20_05zeit} und \ref{fig:flatrecFil20_05zeit} ist gut zu erkennen, dass beim
+       Flat-Top Sampling, wie in der Durchführung beschrieben, ein Abtastrechteck durch das S\&H-Glied eine flache
+       Oberkante hat und beim Shape-Top Sampling die Oberkante des Rechtecks der Kontur des Ausgangssignals folgt. 
+       Die Rekonstruktion des Ausgangssignals ist nahezu identisch.
+       Des weiteren kann man gut erkennen, dass die Filterung des Rechtecksignals vor der Abtastung eine Glättung des
+       rekonstruierten Signals hervorruft und das Signal mit weniger Überschwingen rekonstruiert werden kann.
+       
+       Beim Flat-Top Sampling ist der Modulieraufwand auf Grund des wegfallenden S\&H-Gliedes geringer.
+       
+       \TODO{Was sind die Unterschiede zwischen den beiden? und was sind weitere mögliche Vorteile????}
     
+      \end{quote}
+      
+      \subsection{Audiosignal}
+      \begin{quote}
+      
+      \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/audioflatabget_zeit}
+                          \caption{Flat-Top Audiosignal moduliertes Signal}
+		                  \label{fig:flataudiozeit}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                       \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/audioflat}
+                       \caption{Flat-Top Audiosignal Rekonstruiert}
+		              \label{fig:flataudio}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+           
+       \TODO{Warum gibt es davon kein vernünftiges abgetastetes Zeitsignal, sehen beide gleich aus was kann man
+       dazu noch sagen, soll das überhaupt ins Protokoll????}
     
-    
-    
+      \end{quote}
+      
+      
 \end{quote}
 
 
