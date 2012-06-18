@@ -60,16 +60,60 @@ FFTshiftplotZP2(S.A,T_ges,f_T,4,'b',4)
 
 
 
-%         figure(1);
-%         print -painters -dpdf -r600 ../Bilder/ShapeTop_Sign.pdf
-%         figure(2);
-%         print -painters -dpdf -r600 ../Bilder/ShapeTop_freq.pdf
-%         figure(3);
-%         print -painters -dpdf -r600 ../Bilder/FlatTop_Sign.pdf
-%         figure(4);
-%         print -painters -dpdf -r600 ../Bilder/FlatTop_freq.pdf
+% figure(1);
+% print -painters -dpdf -r600 ../Bilder/flatrec10_05.pdf
+% figure(2);
+% print -painters -dpdf -r600 ../Bilder/flatrec10_05abget_zeit.pdf
+% figure(3);
+% print -painters -dpdf -r600 ../Bilder/flatrec20_05.pdf
+% figure(4);
+% print -painters -dpdf -r600 ../Bilder/flatrec20_05abget_zeit.pdf
 
 
+% figure(1);
+% print -painters -dpdf -r600 ../Bilder/flatrec20_02.pdf
+% figure(2);
+% print -painters -dpdf -r600 ../Bilder/flatrec20_02abget_zeit.pdf
+% figure(3);
+% print -painters -dpdf -r600 ../Bilder/flatrec20_07.pdf
+% figure(4);
+% print -painters -dpdf -r600 ../Bilder/flatrec20_07abget_zeit.pdf
+
+
+% figure(1);
+% print -painters -dpdf -r600 ../Bilder/shaperec10_05.pdf
+% figure(2);
+% print -painters -dpdf -r600 ../Bilder/shaperec10_05abget_zeit.pdf
+% figure(3);
+% print -painters -dpdf -r600 ../Bilder/shaperec20_05.pdf
+% figure(4);
+% print -painters -dpdf -r600 ../Bilder/shaperec20_05abget_zeit.pdf
+
+
+% figure(1);
+% print -painters -dpdf -r600 ../Bilder/shaperec20_02.pdf
+% figure(2);
+% print -painters -dpdf -r600 ../Bilder/shaperec20_02abget_zeit.pdf
+% figure(3);
+% print -painters -dpdf -r600 ../Bilder/shaperec20_07.pdf
+% figure(4);
+% print -painters -dpdf -r600 ../Bilder/shaperec20_07abget_zeit.pdf
+
+
+% figure(1);
+% print -painters -dpdf -r600 ../Bilder/flatrecFil20_05.pdf
+% figure(2);
+% print -painters -dpdf -r600 ../Bilder/flatrecFil20_05abget_zeit.pdf
+% figure(3);
+% print -painters -dpdf -r600 ../Bilder/shaperecFil20_05.pdf
+% figure(4);
+% print -painters -dpdf -r600 ../Bilder/shaperecFil20_05abget_zeit.pdf
+
+
+% figure(1);
+% print -painters -dpdf -r600 ../Bilder/audioflatabget_zeit.pdf
+% figure(2);
+% print -painters -dpdf -r600 ../Bilder/audioflat.pdf
 
 
 
