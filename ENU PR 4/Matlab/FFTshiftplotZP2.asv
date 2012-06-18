@@ -46,7 +46,7 @@ ylabel('u [V]');
 %Darstellung des Amplitudenspektrums
 subplot(2,1,2);
 stem(f_DFT, y_DFT_abs,'.-');
-AXIS([0 4000 0 max(y_DFT_abs)*1.2]);
+AXIS([0 4000 0 ceil(max(y_DFT_abs*1.2)*10)/10]);
 %xlim ([-500 500])
 title('Amplitudenspektrum');
 xlabel('f [Hz]');

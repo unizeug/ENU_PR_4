@@ -39,7 +39,7 @@ figure(fignum);
 subplot(2,1,1);
 plot(t,y,farbe);
 %AXIS([0 T_ges/zpf/24 min(y)*1.21 max(y)*1.2]);
-AXIS([0.00015 0.00075 min(y)*1.21 max(y)*1.2]);
+AXIS([0.00025 0.01 min(y)*1.21 max(y)*1.2]);
 title('Zeitsignal');
 xlabel('t [s]');
 ylabel('u [V]');
