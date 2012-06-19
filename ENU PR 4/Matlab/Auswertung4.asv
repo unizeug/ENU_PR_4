@@ -32,7 +32,7 @@ shapeaudio= load('../Messwerte/audiosignalzeitkurzashapetop.mat');
 
 
 % ich denke mal, man muss T_ges und f_T nicht jedes mal neu berechnen. wir
-% haben ja nichts an den aufnahmeeinstellungen geändert oder? 
+% haben ja nichts an den aufnahmeeinstellungen geï¿½ndert oder? 
 
 S = flatrec10_05;
 T_ges = S.Tinterval*S.Length;
