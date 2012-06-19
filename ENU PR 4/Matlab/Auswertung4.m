@@ -32,43 +32,27 @@ shapeaudio= load('../Messwerte/audiosignalzeitkurzashapetop.mat');
 
 
 % ich denke mal, man muss T_ges und f_T nicht jedes mal neu berechnen. wir
-% haben ja nichts an den aufnahmeeinstellungen geï¿½ndert oder? 
+% haben ja nichts an den aufnahmeeinstellungen geändert oder? 
 
-<<<<<<< HEAD
 S = flatsin10_05;
-=======
-S = flatrec10_05;
->>>>>>> master
 T_ges = S.Tinterval*S.Length;
 f_T = 1/S.Tinterval;
 
 FFTshiftplotZP2(S.B,T_ges,f_T,4,'b',1)
 
-<<<<<<< HEAD
 S = flatsin10_05;
-=======
-S = flatrec10_05;
->>>>>>> master
 T_ges = S.Tinterval*S.Length;
 f_T = 1/S.Tinterval;
 
 FFTshiftplotZP2(S.A,T_ges,f_T,4,'b',2)
 
-<<<<<<< HEAD
 S = shapesin10_05;
-=======
-S = flatrec20_05;
->>>>>>> master
 T_ges = S.Tinterval*S.Length;
 f_T = 1/S.Tinterval;
 
 FFTshiftplotZP2(S.B,T_ges,f_T,4,'b',3)
 
-<<<<<<< HEAD
 S = shapesin10_05;
-=======
-S = flatrec20_05;
->>>>>>> master
 T_ges = S.Tinterval*S.Length;
 f_T = 1/S.Tinterval;
 
@@ -76,7 +60,6 @@ FFTshiftplotZP2(S.A,T_ges,f_T,4,'b',4)
 
 
 
-<<<<<<< HEAD
 figure(1);
 print -painters -dpdf -r600 ../Bilder/flatsin10_05.pdf
 figure(2);
@@ -88,8 +71,6 @@ print -painters -dpdf -r600 ../Bilder/shapesin10_05abget_zeit.pdf
 
 
 
-=======
->>>>>>> master
 % figure(1);
 % print -painters -dpdf -r600 ../Bilder/flatrec10_05.pdf
 % figure(2);
@@ -99,7 +80,7 @@ print -painters -dpdf -r600 ../Bilder/shapesin10_05abget_zeit.pdf
 % figure(4);
 % print -painters -dpdf -r600 ../Bilder/flatrec20_05abget_zeit.pdf
 
-
+% 
 % figure(1);
 % print -painters -dpdf -r600 ../Bilder/flatrec20_02.pdf
 % figure(2);
@@ -109,7 +90,7 @@ print -painters -dpdf -r600 ../Bilder/shapesin10_05abget_zeit.pdf
 % figure(4);
 % print -painters -dpdf -r600 ../Bilder/flatrec20_07abget_zeit.pdf
 
-
+% 
 % figure(1);
 % print -painters -dpdf -r600 ../Bilder/shaperec10_05.pdf
 % figure(2);
