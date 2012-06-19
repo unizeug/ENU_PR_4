@@ -283,9 +283,8 @@
              Tiefpass nicht wiedergewonnen werden. Für ein kleineres $\alpha$ sollte sich aber eine
              Rekonstruktion des Ausgangssignals mit weniger Überschwingen ergeben, da das Abtastsignal immer mehr einem,
              für die Abtastung idealen Deltaimpuls ähnelt.\\
-             \TODO{Thommy: auch die Ausschnitte noch mal nen bisschen größer}
              
-              \begin{center}
+            \begin{center}
             \begin{tabular}{ll}
             
             \hspace{-5cm}
@@ -407,9 +406,10 @@
         \ \\
             
         In den Abb. \ref{fig:shaperec10_05} und \ref{fig:shaperec20_05} ist der Unterschied der Rekonstruktion zwischen
-        10 und 20 kHz Signalausblendung noch deutlicher zu erkennen als bei der Signalverbreiterung.
+        10 und 20 kHz Signalausblendung noch deutlicher zu erkennen als bei der Signalverbreiterung. Außerdem ist gut zu
+        sehen, dass Basisband bei 10 bzw. 20 kHz wiederholt wird, weswegen der Rekonstruktionsfilter bei höerer Tastrate
+        größer gewählt werden kann.
         
-        \TODO{Was kann man da noch erkennen????}
         
         \subsubsection{Änderung des Tastgrades}
         \begin{quote}
@@ -484,7 +484,6 @@
              Wie man erkennen kann, ähnelt die Rekonstruktion der Signalausblendung eher dem Urspungssignal, was wie
              nach der Theorie erwartet an dem verzerrten Basisband bei der Signalverbreiterung liegt.
              
-             \TODO{Ist das wirklich so?????}
              
         \end{quote}
         
@@ -499,7 +498,8 @@
                       
              Im Gegensatz zur Signalverbreiterung sollte sich bei der Signalausblendung das Basisband (k=0) nur um den
              Faktor $\alpha$ verringern.
-             Alle anderen Bänder sollten sich noch zusätzlich um den Faktor $si(k\alpha\pi)$ verringern%, was zu einer Verzerrung führt.
+             Alle anderen Bänder sollten sich noch zusätzlich um den Faktor $si(k\alpha\pi)$ verringern. %, was zu einer
+             % Verzerrung führt.
              % (gibt keine Verzerrung) ja stimmt, kann ich auch nicht wirklich erkennen, sollte aber eigentlich so sein,
              % kp skript seite 263 im pdf reader
              Dieses Verhalten zeigt sich in der Praxis (Abb. \ref{fig:shaperec} und \ref{fig:flatrec}) wie auch schon
@@ -544,7 +544,7 @@
       \begin{center}
             \begin{tabular}{ll}
             
-            \hspace{-5cm}
+            \hspace{-4cm}
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
                         \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/flatrecFil20_05abget_zeit}
@@ -567,11 +567,11 @@
             \begin{center}
             \begin{tabular}{ll}
             
-            \hspace{-5cm}
+            \hspace{-4cm}
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
                         \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/flatrecFil20_05}
-                          \caption{Shape-Top gefiltertes Rechteck Rekonstruktion}
+                          \caption{Flat-Top gefiltertes Rechteck Rekonstruktion}
 		                  \label{fig:flatrecFil20_05}
                     \end{figure}
                 \end{minipage}
@@ -594,7 +594,7 @@
             Oberkante hat und beim Shape-Top Sampling die Oberkante des tiefpassgefilterten Rechtecks der Kontur des
             Ausgangssignals folgt.
             Die Rekonstruktion des Ausgangssignals ist nahezu identisch.\\
-            \TODO{ist das noch so wenn man das breitete frequenzspektrum hat?}
+            \TODO{Thommy: was ist ein Abtastrechteck?}
             Des weiteren kann man gut erkennen, dass die Filterung des Rechtecksignals vor der Abtastung eine Glättung des
             rekonstruierten Signals hervorruft und das Signal mit weniger Überschwingen rekonstruiert werden kann. Dies kann
             man ausnutzen, wenn die hohen Frequenzen im Ausgangssignal nicht wichtig sind. Die hohen Frequenzen werden
@@ -602,7 +602,7 @@
             
             Beim Flat-Top Sampling ist der Modulieraufwand auf Grund des S\&H-Gliedes höher. Aufgrund der flachen
             Oberkante kann das Signal so aber digitalisiert und digital übertragen werden.\\
-            Shape-Top Sampling ist nur für analoge übertragungen verwendbar, da die Oberkante für digitale
+            Shape-Top Sampling ist nur für analoge Übertragungen verwendbar, da die Oberkante für digitale
             Übertragungen nochmals abgetastet werden müsste. Ein einsatzbereich ist z.B. das Time-Division Multiplexing.
             
       
