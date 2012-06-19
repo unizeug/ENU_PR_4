@@ -9,7 +9,7 @@ function FFTshiftplotZP2(y, T_ges, f_T, A,farbe) %fignum)
 
 
 % Zeropadding Faktor (1: kein Padding, 3: scheint gut zu sein)
-zpf = 3;
+zpf = 10;
 
 temp = zeros(length(y)*zpf,1);
 temp(1:length(y)) = y;
@@ -36,17 +36,17 @@ f_DFT = f_T/(N-1)*((-N/2):(N/2-1));
 %neues Fenster zur Darstellung
 %figure(fignum);
 %Darstellung des Zeitsignals
-subplot(2,1,1);
-plot(t,y,farbe);
-%AXIS([0 T_ges/zpf/24 min(y)*1.21 max(y)*1.2]);
-AXIS([0 5 min(y)*1.21 max(y)*1.2]);
-title('Zeitsignal');
-xlabel('t [s]');
-ylabel('u [V]');
+% subplot(2,1,1);
+% plot(t,y,farbe);
+% %AXIS([0 T_ges/zpf/24 min(y)*1.21 max(y)*1.2]);
+% AXIS([0 1 min(y)*1.21 max(y)*1.2]);
+% title('Zeitsignal');
+% xlabel('t [s]');
+% ylabel('u [V]');
 %Darstellung des Amplitudenspektrums
 subplot(2,1,2);
 stem(f_DFT, y_DFT_abs,'.-');
-AXIS([0 10000 0 ceil(max(y_DFT_abs*1.2)*10)/10]);
+AXIS([0 150000 0 ceil(max(y_DFT_abs*1.2)*10)/10]);
 %xlim ([-500 500])
 title('Amplitudenspektrum');
 xlabel('f [Hz]');

@@ -34,35 +34,77 @@ shapeaudio= load('../Messwerte/audiosignalzeitkurzashapetop.mat');
 % ich denke mal, man muss T_ges und f_T nicht jedes mal neu berechnen. wir
 % haben ja nichts an den aufnahmeeinstellungen ge‰ndert oder? 
 
-S = flataudio;
+% S = flatrec10_05;
+% T_ges = S.Tinterval*S.Length;
+% f_T = 1/S.Tinterval;
+% 
+% FFTshiftplotZP2(S.B,T_ges,f_T,4,'b',1)
+% 
+% S = flatrec10_05;
+% T_ges = S.Tinterval*S.Length;
+% f_T = 1/S.Tinterval;
+% 
+% FFTshiftplotZP2(S.A,T_ges,f_T,4,'b',2)
+% 
+% S = flatrec20_05;
+% T_ges = S.Tinterval*S.Length;
+% f_T = 1/S.Tinterval;
+% 
+% FFTshiftplotZP2(S.B,T_ges,f_T,4,'b',3)
+% 
+S = flatrec20_05;
 T_ges = S.Tinterval*S.Length;
 f_T = 1/S.Tinterval;
 
-FFTshiftplotZP2(S.B,T_ges,f_T,4,'b',1)
-
-S = flataudio;
-T_ges = S.Tinterval*S.Length;
-f_T = 1/S.Tinterval;
-
-FFTshiftplotZP2(S.A,T_ges,f_T,4,'b',2)
-
-S = shaperecFil20_05;
-T_ges = S.Tinterval*S.Length;
-f_T = 1/S.Tinterval;
-
-FFTshiftplotZP2(S.B,T_ges,f_T,4,'b',3)
-
-S = shaperecFil20_05;
-T_ges = S.Tinterval*S.Length;
-f_T = 1/S.Tinterval;
-
-FFTshiftplotZP2(S.A,T_ges,f_T,4,'b',4)
 
 
 
+T_ges = 1;                  % Simulationsdauer in Sekunden
+
+f_T_sim = 400000;           % Abtastfrequenz der Simulation
+
+N = round(f_T_sim*T_ges);   % Anzahl der Werte der Simulation
+
+n = 0:N-1;                  % n-ter Abtastwert
+t = n ./ f_T_sim;           % Zeitpunkte der Abtastung
+nf = n .* N ./ f_T_sim;     % physikalische Frequenzen f√ºr N-Punkte FFT an der Stelle n
+
+% Sinus-Signal mit 2 kHz und 2 V Amplitude
+
+f_sin = 2000;
+Omega_sin = 2*pi*f_sin./f_T_sim;
+A_sin = 2;
+
+u_sin = A_sin*sin(Omega_sin.*n);
 
 
+f_vis = 250000;             % Darstellung der Frequenzen von 0 bis f_vis Hz
+n_U_vis = f_vis / f_T_sim * N;
+n_u_vis = (2*N*1 / f_sin)*10000000;
+Nc = 2;
+Na = 3;
+i = 1;
 
+ figure(3);
+    plot(t(1:n_u_vis),u_sin(1:n_u_vis),'r');
+%         hold on;
+%          FFTshiftplotZP2(S.A,T_ges,f_T,4,'b');
+%         hold off;%         axis tight;
+        ylim([0 1]);
+        xlabel('t [s]');
+        ylabel('Amplitude [V]');
+        %title(['\alpha = ' num2str(alpha_c) ' und f_T = ' num2str(f_c)]);
+
+
+%         SI_ZP = zeros(1,N);
+%         SI_ZP(1:N/f_c) = c(1:N/f_c);
+%         SI_ZP = SI_ZP ;%.* max(u_sin) .*(f_c*T_ges);
+%         SI_ZP_fft = abs(fft(SI_ZP)./(N/f_c));  % Betragsfrequenzgang nach Abtastung mit Signalausblendung ...((N/f_c)*alpha_c))
+%         %SI_ZP_fft = SI_ZP_fft * (1/max(SI_ZP_fft)) * max(U_sin_pam);
+%         
+
+
+% 
 % figure(1);
 % print -painters -dpdf -r600 ../Bilder/flatrec10_05.pdf
 % figure(2);
@@ -72,7 +114,7 @@ FFTshiftplotZP2(S.A,T_ges,f_T,4,'b',4)
 % figure(4);
 % print -painters -dpdf -r600 ../Bilder/flatrec20_05abget_zeit.pdf
 
-% 
+
 % figure(1);
 % print -painters -dpdf -r600 ../Bilder/flatrec20_02.pdf
 % figure(2);
@@ -82,7 +124,7 @@ FFTshiftplotZP2(S.A,T_ges,f_T,4,'b',4)
 % figure(4);
 % print -painters -dpdf -r600 ../Bilder/flatrec20_07abget_zeit.pdf
 
-% 
+
 % figure(1);
 % print -painters -dpdf -r600 ../Bilder/shaperec10_05.pdf
 % figure(2);
@@ -113,10 +155,10 @@ FFTshiftplotZP2(S.A,T_ges,f_T,4,'b',4)
 % print -painters -dpdf -r600 ../Bilder/shaperecFil20_05abget_zeit.pdf
 
 
-figure(1);
-print -painters -dpdf -r600 ../Bilder/audioflatabget_zeit.pdf
-figure(2);
-print -painters -dpdf -r600 ../Bilder/audioflat.pdf
+% figure(1);
+% print -painters -dpdf -r600 ../Bilder/audioflatabget_zeit.pdf
+% figure(2);
+% print -painters -dpdf -r600 ../Bilder/audioflat.pdf
 
 
 
