@@ -239,6 +239,9 @@
             \end{tabular}
             \end{center}
             
+            \TODO{Thommy: hier drüber und drunter, das sind exakt die selben bilder. da müsste doch nen unterschied in
+            der abtastfrequenz zu sehen sein oder?}
+            
             \begin{center}
             \begin{tabular}{ll}
             
@@ -314,7 +317,8 @@
             \ \\
             \ \\
             An den Bildern \ref{fig:flatrec20_05} und \ref{fig:flatrec10_05} kann man weiterhin erkennen, dass das
-            Signal, das mit 20 kHz Flat-Top abgetastet wurde wie erwartet mit weniger Überschwingen rekonstruiert werden kann.
+            Signal, das mit 20 kHz Flat-Top abgetastet wurde wie erwartet mit weniger Überschwingen rekonstruiert werden
+            kann. Eine erhöte Abtastfrequenz zahlt sich also bei der genauigkeit der Übertragung aus.
             
           
             
@@ -332,7 +336,6 @@
              Tiefpass nicht wiedergewonnen werden. Für ein kleineres $\alpha$ sollte sich aber eine
              Rekonstruktion des Ausgangssignals mit weniger Überschwingen ergeben, da das Abtastsignal immer mehr einem,
              für die Abtastung idealen Deltaimpuls ähnelt.\\
-             \TODO{Thommy: auch die Ausschnitte noch mal nen bisschen größer}
              
             \begin{center}
             \begin{tabular}{ll}
@@ -427,6 +430,9 @@
             \end{tabular}
             \end{center}
             
+            \TODO{Thommy: auch hier sind die Bilder exakt gleich. Ich hab die vier Bilder in der Matlab-Datei schon mal
+            rausgesucht, kannst du sie noch abspeichern?}
+            
             \begin{center}
             \begin{tabular}{ll}
             
@@ -507,7 +513,7 @@
         In den Abb. \ref{fig:shaperec10_05} und \ref{fig:shaperec20_05} ist der Unterschied der Rekonstruktion zwischen
         10 und 20 kHz Signalausblendung noch deutlicher zu erkennen als bei der Signalverbreiterung. Außerdem ist gut zu
         sehen, dass Basisband bei 10 bzw. 20 kHz wiederholt wird, weswegen der Rekonstruktionsfilter bei höerer Tastrate
-        größer gewählt werden kann.
+        größer gewählt werden kann bzw. der Nebenzipfel im Frequenzbereich komplett verschwindet.
         
         
         \subsubsection{Änderung des Tastgrades}
@@ -581,9 +587,15 @@
              Die Spektren weisen auch bei der Signalausblendung für verschiedene $\alpha$ unterschiedliche Amplituden
              auf, wie es durch den Faktor $\alpha$ genau wie schon bei der Signalverbreiterung der Fall war.
              
-             
+             \TODO{
              Wie man erkennen kann, ähnelt die Rekonstruktion der Signalausblendung eher dem Urspungssignal, was wie
-             nach der Theorie erwartet an dem verzerrten Basisband bei der Signalverbreiterung liegt.
+             nach der Theorie erwartet an dem verzerrten Basisband bei der Signalverbreiterung liegt.\\
+             \\
+             ersetzt durch:\\}
+             Dass die beiden Rekonstruierten signale sich so sehr ähneln liegt daran, dass wir bei der hohen
+             Abtastfrequenz die Nebenpeaks im Frequenzspektrum sehr gut herausfiltern konnten. Trotzdem fällt deutlich
+             auf, dass das mit höerem $\alpha$ abgetastete Signal weniger verrauscht ist. Der am Frequenzspekrtum der
+             rekonstruierten Signale abgelesene Signal/Rausch-Abstand ist etwa um den Faktor 2 größer.\\
              
              
         \end{quote}
@@ -594,22 +606,15 @@
     
     \subsection{Vergleich Shape-Top und Flat-Top Sampling}
       \begin{quote}
-      
-       Im Gegensatz zur Signalverbreiterung sollte sich bei der Signalausblendung das Basisband (k=0) nur um den
-             Faktor $\alpha$ verringern.\\
-             Alle anderen Bänder sollten sich noch zusätzlich um den Faktor $si(k\alpha\pi)$ verringern%, was zu einer Verzerrung führt.
-             % (gibt keine Verzerrung) ja stimmt, kann ich auch nicht wirklich erkennen, sollte aber eigentlich so sein,
-             % kp skript seite 263 im pdf reader
-             Dieses Verhalten zeigt sich in der Praxis (Abb. \ref{fig:shaperec} und \ref{fig:flatrec}) wie auch schon
-             in Skizze \ref{fig:skizze}
              
+             \TODO{Wär hier nicht nen Sinus aussagekräftiger?\\
+                   is nicht so wichtig wenns zu viel wird}
              
-              
              
             \begin{center}
             \begin{tabular}{ll}
             
-            \hspace{-5cm}
+            \hspace{-4cm}
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
                         \includegraphics[scale=0.7, trim = 35mm 95mm 35mm 95mm, clip]{Bilder/shapeskizze}
@@ -641,46 +646,22 @@
                       
              Im Gegensatz zur Signalverbreiterung sollte sich bei der Signalausblendung das Basisband (k=0) nur um den
              Faktor $\alpha$ verringern.
-             Alle anderen Bänder sollten sich noch zusätzlich um den Faktor $si(k\alpha\pi)$ verringern. %, was zu einer
-             % Verzerrung führt.
-             % (gibt keine Verzerrung) ja stimmt, kann ich auch nicht wirklich erkennen, sollte aber eigentlich so sein,
-             % kp skript seite 263 im pdf reader
+             Alle anderen Bänder sollten sich noch zusätzlich um den Faktor $si(k\alpha\pi)$ verringern. 
+             \TODO{hast du ne idee? sonst raus: \\
+             \\
+             , was zu einer Verzerrung führt. (gibt keine Verzerrung) ja stimmt, kann ich auch nicht wirklich erkennen, sollte aber
+             eigentlich so sein,\\
+              kp skript seite 263 im pdf reader
+             }
+             
+             
              Dieses Verhalten zeigt sich in der Praxis (Abb. \ref{fig:shaperec} und \ref{fig:flatrec}) wie auch schon
              in Skizze \ref{fig:skizze}
              
              
              
              
-            \begin{center}
-            \begin{tabular}{ll}
             
-            \hspace{-5cm}
-                \begin{minipage}{0.6\textwidth}
-                    \begin{figure}[H]
-                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/shapeskizze}
-                          \caption{Shape-Top-Sampling Rechteck}
-                          \label{fig:shaperec}
-                    \end{figure}
-                \end{minipage}
-                
-                \begin{minipage}{0.6\textwidth}
-                    \begin{figure}[H]
-                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/flatskizze}
-                       \caption{Flat-Top-Sampling Rechteck}
-                      \label{fig:flatrec}
-                    \end{figure}
-                \end{minipage}
-            
-            \end{tabular}
-            \end{center}
-            \ \\
-            \ \\
-            \ \\
-            
-            Da bei der Signalverbreiterung die Amplituden im Spektrum von der Frequenz abhängen (Vorfaktor: $si(\omega
-             \alpha T/2)$), haben die beiden Nebenpeaks jeweils eine andere Amplitude. Hingegen ist der Vorfaktor bei
-             der Signalaublendung unabhängig von der Frequenz und damit haben die jeweils zueinander
-             gehörenden Peaks die gleiche Amplitude.
       
       
       
@@ -707,6 +688,14 @@
             \end{tabular}
             \end{center}
             
+            \vspace{2em}
+            
+            Da bei der Signalverbreiterung die Amplituden im Spektrum von der Frequenz abhängen (Vorfaktor: $si(\omega
+             \alpha T/2)$), haben die beiden Nebenpeaks jeweils eine andere Amplitude. Hingegen ist der Vorfaktor bei
+             der Signalaublendung unabhängig von der Frequenz und damit haben die jeweils zueinander
+             gehörenden Peaks die gleiche Amplitude.
+             
+             
             \begin{center}
             \begin{tabular}{ll}
             
@@ -730,6 +719,9 @@
             \end{tabular}
             \end{center}
             
+            \TODO{Die rekonstruierten Bilder sind wenig aussagekräftig oder? und wir gehen auch garnicht darauf ein.
+            raus?}
+            
             \vspace{2em}
             
             In den Abb. \ref{fig:shaperecFil20_05zeit} und \ref{fig:flatrecFil20_05zeit} ist gut zu erkennen, dass beim
@@ -737,7 +729,6 @@
             Oberkante hat und beim Shape-Top Sampling die Oberkante des tiefpassgefilterten Rechtecks der Kontur des
             Ausgangssignals folgt.
             Die Rekonstruktion des Ausgangssignals ist nahezu identisch.\\
-            \TODO{Thommy: was ist ein Abtastrechteck?}
             Des weiteren kann man gut erkennen, dass die Filterung des Rechtecksignals vor der Abtastung eine Glättung des
             rekonstruierten Signals hervorruft und das Signal mit weniger Überschwingen rekonstruiert werden kann. Dies kann
             man ausnutzen, wenn die hohen Frequenzen im Ausgangssignal nicht wichtig sind. Die hohen Frequenzen werden
@@ -757,7 +748,7 @@
           \begin{center}
                 \begin{tabular}{ll}
                 
-                \hspace{-5cm}
+                \hspace{-4cm}
                     \begin{minipage}{0.6\textwidth}
                         \begin{figure}[H]
                             \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/audioflatabget_zeit}
