@@ -7,8 +7,8 @@
 \newcommand{\betreuer}{Betreuer: Lieven Lange}
 
 
-\newcommand{\pdftitle}{Nachrichtenuebertragung\ Praktikum\ 03}
-\newcommand{\prototitle}{Praktikum 05 \\ PAM}
+\newcommand{\pdftitle}{Nachrichtenuebertragung\ Praktikum\ 05}
+\newcommand{\prototitle}{Praktikum 05 \\ Pulsamplitudenmodulation und nichtideale Abtastung}
 
 \input{../../packages/tu_header_9}
 %\begin{document}
@@ -214,7 +214,56 @@
             Der nahezu reine Sinus sollte ziemlich gut rekonstruiert werden können, da er theoretisch nur einen
             Frequenzanteil enthält. Alle Wiederholungen des Spektrums können somit sehr einfach weggefiltert werden.
             
-            \TODO{Sinus einfügen: kann perfekt rekonstruiert werden}
+        
+            
+            \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/flatsin10_05abget_zeit}
+                          \caption{Sinus 10 kHz alpha 0,5 moduliertes Signal}
+		                  \label{fig:flatsin10_05zeit}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/flatsin20_05abget_zeit}
+                       \caption{Sinus 20 kHz alpha 0,5 moduliertes Signal}
+		              \label{fig:flatsin20_05zeit}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+            
+            \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/flatsin10_05}
+                          \caption{Sinus 10 kHz alpha 0,5 Rekonstruktion}
+		                  \label{fig:flatsin10_05}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/flatsin20_05}
+                       \caption{Sinus 20 kHz alpha 0,5 Rekonstruktion}
+		              \label{fig:flatsin20_05}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+            \ \\
+            \ \\
+            \ \\
             
             \begin{center}
             \begin{tabular}{ll}
@@ -355,6 +404,55 @@
             Auch bei der Shape-Top Abtastung sollte aus der Vergrößerung der Trägerfrequenz eine bessere
             Rekonstruktion resultieren.
             
+             \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/shapesin10_05abget_zeit}
+                          \caption{Sinus 10 kHz alpha 0,5 moduliertes Signal}
+		                  \label{fig:shapesin10_05zeit}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/shapesin20_05abget_zeit}
+                       \caption{Siunus 20 kHz alpha 0,5 moduliertes Signal}
+		              \label{fig:shapesin20_05zeit}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+            
+            \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/shapesin10_05}
+                          \caption{Sinus 10 kHz alpha 0,5 Rekonstruktion}
+		                  \label{fig:shapesin10_05}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/shapesin20_05}
+                       \caption{Sinus 20 kHz alpha 0,5 Rekonstruktion}
+		              \label{fig:shapesin20_05}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+            \ \\
+            \ \\
+            \ \\
+            
             \begin{center}
             \begin{tabular}{ll}
             
@@ -415,47 +513,7 @@
         \begin{quote}
             
                       
-             Im Gegensatz zur Signalverbreiterung sollte sich bei der Signalausblendung das Basisband (k=0) nur um den
-             Faktor $\alpha$ verringern.
-             Alle anderen Bänder sollten sich noch zusätzlich um den Faktor $si(k\alpha\pi)$ verringern%, was zu einer Verzerrung führt.
-             % (gibt keine Verzerrung) ja stimmt, kann ich auch nicht wirklich erkennen, sollte aber eigentlich so sein,
-             % kp skript seite 263 im pdf reader
-             Dieses Verhalten zeigt sich in der Praxis (Abb. \ref{fig:shaperec} und \ref{fig:flatrec}) wie auch schon
-             in Skizze \ref{fig:skizze}
-             
-             
-             
-             
-            \begin{center}
-            \begin{tabular}{ll}
             
-            \hspace{-5cm}
-                \begin{minipage}{0.6\textwidth}
-                    \begin{figure}[H]
-                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/shapeskizze}
-                          \caption{Shape-Top-Sampling Rechteck}
-		                  \label{fig:shaperec}
-                    \end{figure}
-                \end{minipage}
-                
-                \begin{minipage}{0.6\textwidth}
-                    \begin{figure}[H]
-                        \includegraphics[scale=0.7, trim = 35mm 100mm 35mm 95mm, clip]{Bilder/flatskizze}
-                       \caption{Flat-Top-Sampling Rechteck}
-		              \label{fig:flatrec}
-                    \end{figure}
-                \end{minipage}
-            
-            \end{tabular}
-            \end{center}
-            \ \\
-            \ \\
-            \ \\
-            
-            Da bei der Signalverbreiterung die Amplituden im Spektrum von der Frequenz abhängen (Vorfaktor: $si(\omega
-             \alpha T/2)$), haben die beiden Nebenpeaks jeweils eine andere Amplitude. Hingegen ist der Vorfaktor bei
-             der Signalaublendung unabhängig von der Frequenz und damit haben die jeweils zueinander
-             gehörenden Peaks die gleiche Amplitude.
              
     
     %\begin{figure}[H]
@@ -537,6 +595,48 @@
     
     \subsection{Vergleich Shape-Top und Flat-Top Sampling}
       \begin{quote}
+      
+       Im Gegensatz zur Signalverbreiterung sollte sich bei der Signalausblendung das Basisband (k=0) nur um den
+             Faktor $\alpha$ verringern.\\
+             Alle anderen Bänder sollten sich noch zusätzlich um den Faktor $si(k\alpha\pi)$ verringern%, was zu einer Verzerrung führt.
+             % (gibt keine Verzerrung) ja stimmt, kann ich auch nicht wirklich erkennen, sollte aber eigentlich so sein,
+             % kp skript seite 263 im pdf reader
+             Dieses Verhalten zeigt sich in der Praxis (Abb. \ref{fig:shaperec} und \ref{fig:flatrec}) wie auch schon
+             in Skizze \ref{fig:skizze}
+             
+             
+              
+             
+            \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 95mm 35mm 95mm, clip]{Bilder/shapeskizze}
+                          \caption{Shape-Top-Sampling Rechteck}
+		                  \label{fig:shaperec}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.7, trim = 35mm 95mm 35mm 95mm, clip]{Bilder/flatskizze}
+                       \caption{Flat-Top-Sampling Rechteck}
+		              \label{fig:flatrec}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+            \ \\
+            \ \\
+            \ \\
+            
+            Da bei der Signalverbreiterung die Amplituden im Spektrum von der Frequenz abhängen (Vorfaktor: $si(\omega
+             \alpha T/2)$), haben die beiden Nebenpeaks jeweils eine andere Amplitude. Hingegen ist der Vorfaktor bei
+             der Signalaublendung unabhängig von der Frequenz und damit haben die jeweils zueinander
+             gehörenden Peaks die gleiche Amplitude.
       
       \begin{center}
             \begin{tabular}{ll}
