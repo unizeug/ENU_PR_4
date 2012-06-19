@@ -1,4 +1,4 @@
-function FFTshiftplot(y, T_ges, f_T, A,farbe) %fignum)
+function FFTshiftplot(y, T_ges, f_T, A,farbe, fignum)
 
 % y         - Zeitvektor
 % T_ges     - Dauer des Signals
@@ -23,7 +23,7 @@ t = T_ges*(0:(N-1))/(N-1);
 %Frequenzachse
 f_DFT = f_T/(N-1)*((-N/2):(N/2-1));
 %neues Fenster zur Darstellung
-%figure(fignum);
+figure(fignum);
 %Darstellung des Zeitsignals
 subplot(3,1,1);
 plot(t,y,farbe);

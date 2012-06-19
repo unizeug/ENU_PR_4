@@ -39,14 +39,22 @@ figure(fignum);
 subplot(2,1,1);
 plot(t,y,farbe);
 %AXIS([0 T_ges/zpf/24 min(y)*1.21 max(y)*1.2]);
+<<<<<<< HEAD
 AXIS([0.0001 0.00075 min(y)*1.21 max(y)*1.2]);
+=======
+AXIS([0.00015 0.00075 min(y)*1.21 max(y)*1.2]);
+>>>>>>> master
 title('Zeitsignal');
 xlabel('t [s]');
 ylabel('u [V]');
 %Darstellung des Amplitudenspektrums
 subplot(2,1,2);
 stem(f_DFT, y_DFT_abs,'.-');
+<<<<<<< HEAD
 AXIS([0 80000 0 ceil(max(y_DFT_abs*1.2)*10)/10]);
+=======
+AXIS([0 4000 0 ceil(max(y_DFT_abs*1.2)*10)/10]);
+>>>>>>> master
 %xlim ([-500 500])
 title('Amplitudenspektrum');
 xlabel('f [Hz]');

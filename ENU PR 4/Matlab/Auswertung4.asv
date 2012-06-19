@@ -32,7 +32,7 @@ shapeaudio= load('../Messwerte/audiosignalzeitkurzashapetop.mat');
 
 
 % ich denke mal, man muss T_ges und f_T nicht jedes mal neu berechnen. wir
-% haben ja nichts an den aufnahmeeinstellungen geändert oder? 
+% haben ja nichts an den aufnahmeeinstellungen geï¿½ndert oder? 
 
 S = flatrec10_05;
 T_ges = S.Tinterval*S.Length;
@@ -57,40 +57,17 @@ T_ges = S.Tinterval*S.Length;
 f_T = 1/S.Tinterval;
 
 FFTshiftplotZP2(S.A,T_ges,f_T,4,'b',4)
-f_T_sim = 400000;
-f_vis = 250000;             % Darstellung der Frequenzen von 0 bis f_vis Hz
-n_U_vis = f_vis / f_T_sim * N;
-n_u_vis = 2*N*1 / f_sin;
-
- figure(3);
- subplot(1,1,1);
-        plot(t(1:n_u_vis),u_sin_sh_pam(1:n_u_vis));
-        hold on;
-        plot(t(1:n_u_vis),u_sin(1:n_u_vis).*3,'r');
-        hold off;%         axis tight;
-        ylim([-7 7]);
-        xlabel('t [s]');
-        ylabel('Amplitude [V]');
-        title(['\alpha = ' num2str(alpha_c) ' und f_T = ' num2str(f_c)]);
-
-
-        SI_ZP = zeros(1,N);
-        SI_ZP(1:N/f_c) = c(1:N/f_c);
-        SI_ZP = SI_ZP ;%.* max(u_sin) .*(f_c*T_ges);
-        SI_ZP_fft = abs(fft(SI_ZP)./(N/f_c));  % Betragsfrequenzgang nach Abtastung mit Signalausblendung ...((N/f_c)*alpha_c))
-        %SI_ZP_fft = SI_ZP_fft * (1/max(SI_ZP_fft)) * max(U_sin_pam);
-        
 
 
 
-figure(1);
-print -painters -dpdf -r600 ../Bilder/flatrec10_05.pdf
-figure(2);
-print -painters -dpdf -r600 ../Bilder/flatrec10_05abget_zeit.pdf
-figure(3);
-print -painters -dpdf -r600 ../Bilder/flatrec20_05.pdf
-figure(4);
-print -painters -dpdf -r600 ../Bilder/flatrec20_05abget_zeit.pdf
+% figure(1);
+% print -painters -dpdf -r600 ../Bilder/flatrec10_05.pdf
+% figure(2);
+% print -painters -dpdf -r600 ../Bilder/flatrec10_05abget_zeit.pdf
+% figure(3);
+% print -painters -dpdf -r600 ../Bilder/flatrec20_05.pdf
+% figure(4);
+% print -painters -dpdf -r600 ../Bilder/flatrec20_05abget_zeit.pdf
 
 
 % figure(1);
@@ -134,9 +111,13 @@ print -painters -dpdf -r600 ../Bilder/flatrec20_05abget_zeit.pdf
 
 
 % figure(1);
-% print -painters -dpdf -r600 ../Bilder/audioflatabget_zeit.pdf
+% print -painters -dpdf -r600 ../Bilder/flatrec20_02.pdf
 % figure(2);
-% print -painters -dpdf -r600 ../Bilder/audioflat.pdf
+% print -painters -dpdf -r600 ../Bilder/flatrec20_02abget_zeit.pdf
+% figure(3);
+% print -painters -dpdf -r600 ../Bilder/flatrec20_07.pdf
+% figure(4);
+% print -painters -dpdf -r600 ../Bilder/flatrec20_07abget_zeit.pdf
 
 
 

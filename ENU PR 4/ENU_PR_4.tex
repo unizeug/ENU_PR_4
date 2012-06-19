@@ -202,7 +202,7 @@
     \subsection{Flat-Top Sampling}
     \begin{quote}
         
-        \subsection{Änderung der Trägerfrequenz}
+        \subsection{Änderung der Abtastfrequenz}
         \begin{quote}
             
             Der Theorie nach sollte das Signal, das mit einer höheren Frequenz abgestastet wird, auf Grund der Mehrzahl
@@ -334,7 +334,7 @@
              für die Abtastung idealen Deltaimpuls ähnelt.\\
              \TODO{Thommy: auch die Ausschnitte noch mal nen bisschen größer}
              
-              \begin{center}
+            \begin{center}
             \begin{tabular}{ll}
             
             \hspace{-5cm}
@@ -398,10 +398,10 @@
     \begin{quote}
         
         
-        \subsubsection{Änderung der Trägerfrequenz}
+        \subsubsection{Änderung der Abtastfrequenz}
         \begin{quote}
             
-            Auch bei der Shape-Top Abtastung sollte aus der Vergrößerung der Trägerfrequenz eine bessere
+            Auch bei der Shape-Top Abtastung sollte aus der Vergrößerung der Abtastfrequenz eine bessere
             Rekonstruktion resultieren.
             
              \begin{center}
@@ -505,9 +505,10 @@
         \ \\
             
         In den Abb. \ref{fig:shaperec10_05} und \ref{fig:shaperec20_05} ist der Unterschied der Rekonstruktion zwischen
-        10 und 20 kHz Signalausblendung noch deutlicher zu erkennen als bei der Signalverbreiterung.
+        10 und 20 kHz Signalausblendung noch deutlicher zu erkennen als bei der Signalverbreiterung. Außerdem ist gut zu
+        sehen, dass Basisband bei 10 bzw. 20 kHz wiederholt wird, weswegen der Rekonstruktionsfilter bei höerer Tastrate
+        größer gewählt werden kann.
         
-        \TODO{Was kann man da noch erkennen????}
         
         \subsubsection{Änderung des Tastgrades}
         \begin{quote}
@@ -580,12 +581,10 @@
              Die Spektren weisen auch bei der Signalausblendung für verschiedene $\alpha$ unterschiedliche Amplituden
              auf, wie es durch den Faktor $\alpha$ genau wie schon bei der Signalverbreiterung der Fall war.
              
-             \TODO{Warum allerdings der unterschied zwischen moduliert und rekonstruiert immer 0,5 im Spektrum????} 
              
              Wie man erkennen kann, ähnelt die Rekonstruktion der Signalausblendung eher dem Urspungssignal, was wie
              nach der Theorie erwartet an dem verzerrten Basisband bei der Signalverbreiterung liegt.
              
-             \TODO{Ist das wirklich so?????}
              
         \end{quote}
         
@@ -638,10 +637,57 @@
              der Signalaublendung unabhängig von der Frequenz und damit haben die jeweils zueinander
              gehörenden Peaks die gleiche Amplitude.
       
-      \begin{center}
+
+                      
+             Im Gegensatz zur Signalverbreiterung sollte sich bei der Signalausblendung das Basisband (k=0) nur um den
+             Faktor $\alpha$ verringern.
+             Alle anderen Bänder sollten sich noch zusätzlich um den Faktor $si(k\alpha\pi)$ verringern. %, was zu einer
+             % Verzerrung führt.
+             % (gibt keine Verzerrung) ja stimmt, kann ich auch nicht wirklich erkennen, sollte aber eigentlich so sein,
+             % kp skript seite 263 im pdf reader
+             Dieses Verhalten zeigt sich in der Praxis (Abb. \ref{fig:shaperec} und \ref{fig:flatrec}) wie auch schon
+             in Skizze \ref{fig:skizze}
+             
+             
+             
+             
+            \begin{center}
             \begin{tabular}{ll}
             
             \hspace{-5cm}
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/shapeskizze}
+                          \caption{Shape-Top-Sampling Rechteck}
+                          \label{fig:shaperec}
+                    \end{figure}
+                \end{minipage}
+                
+                \begin{minipage}{0.6\textwidth}
+                    \begin{figure}[H]
+                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/flatskizze}
+                       \caption{Flat-Top-Sampling Rechteck}
+                      \label{fig:flatrec}
+                    \end{figure}
+                \end{minipage}
+            
+            \end{tabular}
+            \end{center}
+            \ \\
+            \ \\
+            \ \\
+            
+            Da bei der Signalverbreiterung die Amplituden im Spektrum von der Frequenz abhängen (Vorfaktor: $si(\omega
+             \alpha T/2)$), haben die beiden Nebenpeaks jeweils eine andere Amplitude. Hingegen ist der Vorfaktor bei
+             der Signalaublendung unabhängig von der Frequenz und damit haben die jeweils zueinander
+             gehörenden Peaks die gleiche Amplitude.
+      
+      
+      
+      \begin{center}
+            \begin{tabular}{ll}
+            
+            \hspace{-4cm}
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
                         \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/flatrecFil20_05abget_zeit}
@@ -664,11 +710,11 @@
             \begin{center}
             \begin{tabular}{ll}
             
-            \hspace{-5cm}
+            \hspace{-4cm}
                 \begin{minipage}{0.6\textwidth}
                     \begin{figure}[H]
                         \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/flatrecFil20_05}
-                          \caption{Shape-Top gefiltertes Rechteck Rekonstruktion}
+                          \caption{Flat-Top gefiltertes Rechteck Rekonstruktion}
 		                  \label{fig:flatrecFil20_05}
                     \end{figure}
                 \end{minipage}
@@ -683,54 +729,60 @@
             
             \end{tabular}
             \end{center}
-       \ \\
-       \ \\
-       \ \\
             
-       In den Abb. \ref{fig:shaperecFil20_05zeit} und \ref{fig:flatrecFil20_05zeit} ist gut zu erkennen, dass beim
-       Flat-Top Sampling, wie in der Durchführung beschrieben, ein Abtastrechteck durch das S\&H-Glied eine flache
-       Oberkante hat und beim Shape-Top Sampling die Oberkante des Rechtecks der Kontur des Ausgangssignals folgt. 
-       Die Rekonstruktion des Ausgangssignals ist nahezu identisch.\\
-       Des weiteren kann man gut erkennen, dass die Filterung des Rechtecksignals vor der Abtastung eine Glättung des
-       rekonstruierten Signals hervorruft und das Signal mit weniger Überschwingen rekonstruiert werden kann.
-       
-       Beim Flat-Top Sampling ist der Modulieraufwand auf Grund des wegfallenden S\&H-Gliedes geringer.
-       
-       \TODO{Was sind die Unterschiede zwischen den beiden? und was sind weitere mögliche Vorteile????}
-    
+            \vspace{2em}
+            
+            In den Abb. \ref{fig:shaperecFil20_05zeit} und \ref{fig:flatrecFil20_05zeit} ist gut zu erkennen, dass beim
+            Flat-Top Sampling, wie in der Durchführung beschrieben, ein Abtastrechteck durch das S\&H-Glied eine flache
+            Oberkante hat und beim Shape-Top Sampling die Oberkante des tiefpassgefilterten Rechtecks der Kontur des
+            Ausgangssignals folgt.
+            Die Rekonstruktion des Ausgangssignals ist nahezu identisch.\\
+            \TODO{Thommy: was ist ein Abtastrechteck?}
+            Des weiteren kann man gut erkennen, dass die Filterung des Rechtecksignals vor der Abtastung eine Glättung des
+            rekonstruierten Signals hervorruft und das Signal mit weniger Überschwingen rekonstruiert werden kann. Dies kann
+            man ausnutzen, wenn die hohen Frequenzen im Ausgangssignal nicht wichtig sind. Die hohen Frequenzen werden
+            einfach schon vor dem Abtasten herausgefiltert und beeinflussen so die Rekonstruktion nicht mehr.
+            
+            Beim Flat-Top Sampling ist der Modulieraufwand auf Grund des S\&H-Gliedes höher. Aufgrund der flachen
+            Oberkante kann das Signal so aber digitalisiert und digital übertragen werden.\\
+            Shape-Top Sampling ist nur für analoge Übertragungen verwendbar, da die Oberkante für digitale
+            Übertragungen nochmals abgetastet werden müsste. Ein einsatzbereich ist z.B. das Time-Division Multiplexing.
+            
+      
       \end{quote}
       
       \subsection{Audiosignal}
       \begin{quote}
       
-      \begin{center}
-            \begin{tabular}{ll}
-            
-            \hspace{-5cm}
-                \begin{minipage}{0.6\textwidth}
-                    \begin{figure}[H]
-                        \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/audioflatabget_zeit}
-                          \caption{Flat-Top Audiosignal moduliertes Signal}
-		                  \label{fig:flataudiozeit}
-                    \end{figure}
-                \end{minipage}
+          \begin{center}
+                \begin{tabular}{ll}
                 
-                \begin{minipage}{0.6\textwidth}
-                    \begin{figure}[H]
-                       \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/audioflat}
-                       \caption{Flat-Top Audiosignal Rekonstruiert}
-		              \label{fig:flataudio}
-                    \end{figure}
-                \end{minipage}
-            
-            \end{tabular}
-            \end{center}
-            \ \\
-            \ \\
-            \ \\
-       \TODO{Warum gibt es davon kein vernünftiges abgetastetes Zeitsignal, sehen beide gleich aus was kann man
-       dazu noch sagen, soll das überhaupt ins Protokoll????}
-    
+                \hspace{-5cm}
+                    \begin{minipage}{0.6\textwidth}
+                        \begin{figure}[H]
+                            \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/audioflatabget_zeit}
+                              \caption{Flat-Top Audiosignal moduliertes Signal}
+                              \label{fig:flataudiozeit}
+                        \end{figure}
+                    \end{minipage}
+                    
+                    \begin{minipage}{0.6\textwidth}
+                        \begin{figure}[H]
+                           \includegraphics[scale=0.55, trim = 16mm 70mm 16mm 85mm, clip]{Bilder/audioflat}
+                           \caption{Flat-Top Audiosignal Rekonstruiert}
+                          \label{fig:flataudio}
+                        \end{figure}
+                    \end{minipage}
+                
+                \end{tabular}
+          \end{center}
+          
+          \vspace{2em}
+          
+          
+          Es ist deutlich zu erkennen, dass die Flat-Top Abtastung für ein Audiosignal sehr gut funktioniert. Es sind
+          auch kaum unterschiede hörbar.
+          
       \end{quote}
       
       
